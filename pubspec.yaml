@@ -1,0 +1,9 @@
+name: todo_ddc
+description: Sample TODO app with polymer2+DDC
+version: 0.0.1
+dependencies:
+ logging: any
+ todo_main:
+   path: todo_main
+ polymer_element:
+   path: ../polymer_element

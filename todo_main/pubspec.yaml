@@ -1,0 +1,11 @@
+name: todo_main
+description: Sample TODO app with polymer2+DDC
+version: 0.0.1
+dependencies:
+ logging: any
+ todo_common:
+   path: ../todo_common
+ todo_renderer:
+   path: ../todo_renderer
+ polymer_element:
+   path: ../../polymer_element

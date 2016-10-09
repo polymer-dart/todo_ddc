@@ -1,0 +1,36 @@
+<link href='../polymer_element/src/paper-checkbox/paper-checkbox.html' rel='import'>
+<link href='../polymer_element/src/paper-material/paper-material.html' rel='import'>
+<link href='../polymer_element/src/paper-input/paper-input.html' rel='import'>
+<dom-module id='todo-renderer'>
+  <template>
+    <style>
+      :host {
+        display:block;
+      }
+
+      .todoText {
+        display:inline-block;
+      }
+      .todoText[is-done] {
+        text-decoration: line-through;
+      }
+
+    </style>
+    <paper-material>
+      [[todo.id]] - <paper-checkbox checked='{{todo.status}}'></paper-checkbox>
+
+      <dom-if if='[[editing]]'>
+        <template>
+          <div class='todoText'><paper-input value='{{todo.text}}' on-blur='finishEdit'></paper-input></div>
+        </template>
+      </dom-if>
+
+      <dom-if if='[[!editing]]'>
+        <template>
+          <div class='todoText' is-done$='[[todo.status]]' on-click='startEdit'>[[todo.text]]</div>
+        </template>
+      </dom-if>
+
+    </paper-material>
+  </template>
+</dom-module>
