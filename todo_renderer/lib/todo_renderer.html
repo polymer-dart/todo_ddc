@@ -1,6 +1,10 @@
 <link href='../polymer_element/src/paper-checkbox/paper-checkbox.html' rel='import'>
+<link href='../polymer_element/src/paper-icon-button/paper-icon-button.html' rel='import'>
+<link href='../polymer_element/src/iron-icon/iron-icon.html' rel='import'>
+<link href='../polymer_element/src/iron-icons/iron-icons.html' rel='import'>
 <link href='../polymer_element/src/paper-material/paper-material.html' rel='import'>
 <link href='../polymer_element/src/paper-input/paper-input.html' rel='import'>
+<link href='../polymer_element/src/iron-flex-layout/iron-flex-layout.html' rel='import'>
 <dom-module id='todo-renderer'>
   <template>
     <style>
@@ -10,26 +14,40 @@
 
       .todoText {
         display:inline-block;
+        @apply --layout-flex;
+        @apply --layout-horizontal;
+
       }
+
+      .todoText > input {
+        @apply --layout-flex;
+      }
+
       .todoText[is-done] {
         text-decoration: line-through;
       }
 
+      [is-hidden] {
+        display:none;
+      }
+
+      .mat {
+        padding:1em;
+        @apply --layout-horizontal;
+          @apply --layout-center;
+      }
+
+
+
     </style>
-    <paper-material>
-      [[todo.id]] - <paper-checkbox checked='{{todo.status}}'></paper-checkbox>
+    <paper-material class='mat'>
+      <paper-checkbox checked='{{myTodo.status}}'></paper-checkbox>
 
-      <dom-if if='[[editing]]'>
-        <template>
-          <div class='todoText'><paper-input value='{{todo.text}}' on-blur='finishEdit'></paper-input></div>
-        </template>
-      </dom-if>
+      <div class='todoText' is-hidden$='[[!editing]]'><input value='{{myTodo.text::input}}' on-blur='finishEdit'></div>
 
-      <dom-if if='[[!editing]]'>
-        <template>
-          <div class='todoText' is-done$='[[todo.status]]' on-click='startEdit'>[[todo.text]]</div>
-        </template>
-      </dom-if>
+      <div class='todoText' is-hidden$='[[editing]]'  is-done$='[[myTodo.status]]' on-click='startEdit'>[[myTodo.text]]</div>
+
+      <paper-icon-button icon='remove' on-click='removeMe' raised><iron-icon icon='cancel'></iron-icon> Remove </paper-icon-button>
 
     </paper-material>
   </template>

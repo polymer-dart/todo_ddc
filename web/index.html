@@ -2,6 +2,12 @@
 <head>
     <script src='require.js'></script>
     <script src="polymer_element/src/webcomponentsjs/webcomponents-lite.js"></script>
+    <script>
+    /* this script must run before Polymer is imported */
+    window.Polymer = {
+      dom: 'shadow'
+    };
+  </script>
     <link href="polymer_element/src/polymer/polymer.html" rel="import">
     <link href='polymer_element/src/paper-styles/paper-styles.html' rel='import'>
     <link href='polymer_element/src/paper-styles/default-theme.html' rel='import'>

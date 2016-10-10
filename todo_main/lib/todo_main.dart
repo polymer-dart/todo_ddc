@@ -2,7 +2,7 @@ import 'dart:html';
 import 'package:polymer_element/polymer_element.dart';
 import 'package:todo_common/model.dart';
 
-@PolymerRegister('todo-main',template:'todo_main.html')
+@PolymerRegister('todo-main', template: 'todo_main.html')
 class TodoMain extends PolymerElement {
   String newText;
   List<TodoDTO> todos = [];
@@ -10,17 +10,16 @@ class TodoMain extends PolymerElement {
 
   @Observe('newText')
   void checkLen(_) {
-    canAdd = newText!=null && newText.isNotEmpty;
+    canAdd = newText != null && newText.isNotEmpty;
   }
 
-  @Observe('todos.*')
-  void debug1(_) {
-    print("CHANGED ${_}");
-  }
-
-  void addTodo(Event ev,details) {
-    todos = todos
-      ..add(new TodoDTO(text:newText));
+  void addTodo(Event ev, details) {
+    todos = todos..add(new TodoDTO(text: newText));
     newText = "";
+  }
+
+  void removeIt(Event ev,TodoDTO todo) {
+    todos = todos
+      ..remove(todo);
   }
 }

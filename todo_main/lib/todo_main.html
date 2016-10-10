@@ -1,16 +1,35 @@
 <link href='../polymer_element/src/paper-input/paper-input.html' rel='import'>
-<link href='../polymer_element/src/paper-button/paper-button.html' rel='import'>
+<link href='../polymer_element/src/iron-input/iron-input.html' rel='import'>
+<link href='../polymer_element/src/paper-icon-button/paper-icon-button.html' rel='import'>
 <link href='../todo_renderer/todo_renderer.html' rel='import'>
+<link href='../polymer_element/src/iron-flex-layout/iron-flex-layout.html' rel='import'>
 
 <dom-module id='todo-main'>
   <template>
     <style>
+      .head {
+        @apply --layout-horizontal;
+      }
+
+      .inp {
+        @apply --layout-flex;
+        @apply --layout-horizontal;
+      }
+
+      .inp > input {
+        @apply --layout-flex;
+      }
     </style>
-    <input type='input' value='{{newText::input}}'><paper-button on-click='addTodo' disabled='[[!canAdd]]'> Add </paper-button>
+    <div class='head'>
+      <iron-input class='inp' bind-value='{{newText}}'>
+        <input placeholder="new todo">
+      </iron-input>
+    <paper-icon-button icon='send' on-click='addTodo' disabled='[[!canAdd]]'></paper-icon-button>
+  </div>
     <div>
       <dom-repeat items='[[todos]]' as='todo'>
         <template>
-          <todo-renderer todo='[[todo]]'></todo-renderer>
+          <todo-renderer my-todo='[[todo]]' on-remove-me='removeIt'></todo-renderer>
         </template>
       </dom-repeat>
     </div>
