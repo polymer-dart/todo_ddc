@@ -5,5 +5,5 @@ dependencies:
  logging: any
  todo_main:
    path: todo_main
- polymer_element:
-   path: ../polymer_element
+ polymer_element: any
+#   path: ../polymer_element

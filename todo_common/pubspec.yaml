@@ -3,5 +3,5 @@ description: Sample TODO app with polymer2+DDC
 version: 0.0.1
 dependencies:
  logging: any
- polymer_element:
-   path: ../../polymer_element
+ polymer_element: any
+#   path: ../../polymer_element
