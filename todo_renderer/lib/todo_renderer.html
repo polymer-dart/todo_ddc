@@ -27,9 +27,6 @@
         text-decoration: line-through;
       }
 
-      [is-hidden] {
-        display:none;
-      }
 
       .mat {
         padding:1em;
@@ -43,9 +40,17 @@
     <paper-material class='mat'>
       <paper-checkbox checked='{{myTodo.status}}'></paper-checkbox>
 
-      <div class='todoText' is-hidden$='[[!editing]]'><input value='{{myTodo.text::input}}' on-blur='finishEdit'></div>
+      <dom-if if='[[editing]]' on-dom-change='domChanged1'>
+        <template >
+          <div class='todoText' ><input value='{{myTodo.text::input}}' on-blur='finishEdit'></div>
+        </template>
+      </dom-if>
 
-      <div class='todoText' is-hidden$='[[editing]]'  is-done$='[[myTodo.status]]' on-click='startEdit'>[[myTodo.text]]</div>
+      <dom-if if='[[!editing]]'>
+        <template >
+          <div class='todoText'  is-done$='[[myTodo.status]]' on-click='startEdit'>[[myTodo.text]]</div>
+        </template>
+      </dom-if>
 
       <paper-icon-button icon='remove' on-click='removeMe' raised><iron-icon icon='cancel'></iron-icon> Remove </paper-icon-button>
 

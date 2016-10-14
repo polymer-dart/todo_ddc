@@ -1,8 +1,10 @@
-<link href='../polymer_element/src/paper-input/paper-input.html' rel='import'>
-<link href='../polymer_element/src/iron-input/iron-input.html' rel='import'>
-<link href='../polymer_element/src/paper-icon-button/paper-icon-button.html' rel='import'>
-<link href='../todo_renderer/todo_renderer.html' rel='import'>
-<link href='../polymer_element/src/iron-flex-layout/iron-flex-layout.html' rel='import'>
+<link rel='import' href='../polymer_element/src/paper-input/paper-input.html' >
+<link rel='import' href='../polymer_element/src/iron-input/iron-input.html' >
+<link rel='import' href='../polymer_element/src/paper-icon-button/paper-icon-button.html' >
+<link rel='import' href='../todo_renderer/todo_renderer.html' >
+<link rel='import' href='../polymer_element/src/iron-flex-layout/iron-flex-layout.html' >
+<link rel='import' href='../polymer_element/src/iron-icons/iron-icons.html' >
+<link rel='import' href='../polymer_element/src/iron-icon/iron-icon.html' >
 
 <dom-module id='todo-main'>
   <template>
@@ -24,7 +26,8 @@
       <iron-input class='inp' bind-value='{{newText}}'>
         <input placeholder="new todo">
       </iron-input>
-    <paper-icon-button icon='send' on-click='addTodo' disabled='[[!canAdd]]'></paper-icon-button>
+
+    <paper-icon-button icon='icons:send' on-click='addTodo' disabled='[[!canAdd]]'></paper-icon-button>
   </div>
     <div>
       <dom-repeat items='[[todos]]' as='todo'>

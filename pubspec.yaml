@@ -7,3 +7,6 @@ dependencies:
    path: todo_main
  polymer_element: any
 #   path: ../polymer_element
+dependency_overrides:
+ polymer_element:
+  path: ../polymer_element
