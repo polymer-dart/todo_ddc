@@ -1,10 +1,15 @@
-<link rel='import' href='../polymer_element/src/paper-input/paper-input.html' >
-<link rel='import' href='../polymer_element/src/iron-input/iron-input.html' >
-<link rel='import' href='../polymer_element/src/paper-icon-button/paper-icon-button.html' >
-<link rel='import' href='../todo_renderer/todo_renderer.html' >
-<link rel='import' href='../polymer_element/src/iron-flex-layout/iron-flex-layout.html' >
-<link rel='import' href='../polymer_element/src/iron-icons/iron-icons.html' >
-<link rel='import' href='../polymer_element/src/iron-icon/iron-icon.html' >
+<base href='../'>
+
+<link rel='import' href='polymer_element/src/paper-input/paper-input.html' >
+<link rel='import' href='polymer_element/src/iron-input/iron-input.html' >
+<link rel='import' href='polymer_element/src/paper-icon-button/paper-icon-button.html' >
+
+<link rel='import' href='polymer_element/src/iron-flex-layout/iron-flex-layout.html' >
+<link rel='import' href='polymer_element/src/iron-icons/iron-icons.html' >
+<link rel='import' href='polymer_element/src/iron-icon/iron-icon.html' >
+<link rel='import' href='polymer_element/src/paper-button/paper-button.html'>
+<link rel='import' href='todo_renderer/todo_renderer.html' >
+
 
 <dom-module id='todo-main'>
   <template>
@@ -24,7 +29,7 @@
     </style>
     <div class='head'>
       <iron-input class='inp' bind-value='{{newText}}'>
-        <input placeholder="new todo">
+        <input type='text' placeholder="new todo">
       </iron-input>
 
     <paper-icon-button icon='icons:send' on-click='addTodo' disabled='[[!canAdd]]'></paper-icon-button>
