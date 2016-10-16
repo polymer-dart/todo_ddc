@@ -28,7 +28,6 @@ class TodoRenderer extends PolymerElement {
     if (editing) {
       new Future((){
         InputElement ie = this.shadowRoot.querySelector("input");
-        print("Dom CHange1 : ${ie} , ${ie?.value}");
         ie.setSelectionRange(0, myTodo.text.length);
         ie.focus();
       });
@@ -39,7 +38,7 @@ class TodoRenderer extends PolymerElement {
     //askConfirm = true;
     PaperDialog dlg = shadowRoot.querySelector('#dlg');
     dlg.open();
-    //print("DIALOG : ${dlg} , ${dlg.opened}");
+    print("DIALOG : ${dlg} , ${dlg.opened}");
   }
 
   removeConfirmed(Event ev,details) {

@@ -4,21 +4,21 @@ packages:
   js:
     description:
       name: js
-      url: "http://pub.drafintech.it:5001"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.1"
   logging:
     description:
       name: logging
-      url: "http://pub.drafintech.it:5001"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "0.11.3+1"
   polymer_element:
     description:
-      path: "../polymer_element"
-      relative: true
-    source: path
-    version: "0.0.4"
+      name: polymer_element
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.5"
   todo_common:
     description:
       path: todo_common

@@ -12,4 +12,6 @@ class ModelDTO {
   List<TodoDTO> todos = [];
 }
 
-ModelDTO model;
+ModelDTO model = new ModelDTO();
+
+ModelDTO getModel() => model;

@@ -5,8 +5,8 @@ dependencies:
  logging: any
  todo_main:
    path: todo_main
- polymer_element: any
+ polymer_element: "^0.0.5"
 #   path: ../polymer_element
-dependency_overrides:
- polymer_element:
-  path: ../polymer_element
+#dependency_overrides:
+# polymer_element:
+#  path: ../polymer_element
