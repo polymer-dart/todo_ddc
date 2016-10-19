@@ -5,7 +5,9 @@ dependencies:
  logging: any
  todo_main:
    path: todo_main
- polymer_element: "^0.0.5"
+ todo_sample1:
+   path: todo_sample1
+ polymer_element: "^0.0.6"
 #   path: ../polymer_element
 #dependency_overrides:
 # polymer_element:

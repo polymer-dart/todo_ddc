@@ -18,7 +18,7 @@ packages:
       name: polymer_element
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.5"
+    version: "0.0.6"
   todo_common:
     description:
       path: todo_common
@@ -34,6 +34,12 @@ packages:
   todo_renderer:
     description:
       path: todo_renderer
+      relative: true
+    source: path
+    version: "0.0.1"
+  todo_sample1:
+    description:
+      path: todo_sample1
       relative: true
     source: path
     version: "0.0.1"
