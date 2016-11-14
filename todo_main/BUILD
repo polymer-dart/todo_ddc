@@ -1,7 +1,5 @@
 load('@polymerize//:polymerize.bzl','polymer_library')
 
-
-
 polymer_library(
   name='todo_main',
   deps=['@logging//:library'],
