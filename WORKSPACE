@@ -7,11 +7,19 @@ load('@polymerize//:polymerize.bzl','dart_library')
 
 dart_library(
   name='js',
-  packageName='js'
+  package_name='js',
+  version='0.6.1'
   )
 
 dart_library(
   name='logging',
-  deps=['@js//:library'],
-  packageName='logging'
+  package_name='logging',
+  version='0.11.3+1'
+  )
+
+dart_library(
+  name='polymer_element',
+  deps= ['@js//:library'],
+  package_name='polymer_element',
+  version='0.0.7'
   )
