@@ -21,7 +21,7 @@ dart_library(
 
 dart_library(
   name='polymer_element',
-  deps= ['@js//:library'],
+  deps= ['@js//:js'],
   src_path='/home/vittorio/Develop/dart/polymer_element',
   package_name='polymer_element',
   version='0.0.7'

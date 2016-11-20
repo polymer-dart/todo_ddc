@@ -18,8 +18,8 @@ package(default_visibility=['//visibility:public'])
 polymer_library(
   name='todo_ddc',
   deps=[
-    '@polymer_element//:library',
-    '@js//:library',
+    '@polymer_element//:polymer_element',
+    '@js//:js',
     '//todo_common',
     '//todo_main',
     '//todo_renderer',
