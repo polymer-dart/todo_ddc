@@ -2,19 +2,6 @@ load('@polymerize//:polymerize.bzl','polymer_library')
 
 package(default_visibility=['//visibility:public'])
 
-#polymer_library(
-#  name = 'js',
-#  dart_sources = ['@js//:js'],
-#  package_name = 'js', #Cippa Lippa
-#  version = '0.6.1')
-
-#polymer_library(
-#  name = 'polymer_element',
-#  deps = ['//:js'],
-#  dart_sources = ['@polymer_element//:polymer_element'],
-#  package_name = 'polymer_element', #Cippa Lippa
-#  version = '0.0.7')
-
 polymer_library(
   name='todo_ddc',
   deps=[
@@ -28,4 +15,9 @@ polymer_library(
   version = '1.0',
   base_path = '//:lib',
   dart_sources= glob(['lib/**/*.dart']),
-  html_templates= glob(['lib/**'],exclude=['lib/**/*.dart']))
+  html_templates= glob(['lib/**','web/**'],exclude=['**/*.dart']))
+
+
+filegroup(
+  name='default',
+  srcs=['todo_ddc'])
