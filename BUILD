@@ -17,8 +17,15 @@ package(default_visibility=['//visibility:public'])
 
 polymer_library(
   name='todo_ddc',
-  deps=['@polymer_element//:library','@js//:library','//todo_common','//todo_main','//todo_renderer','//todo_sample1'],
+  deps=[
+    '@polymer_element//:library',
+    '@js//:library',
+    '//todo_common',
+    '//todo_main',
+    '//todo_renderer',
+    '//todo_sample1'],
   package_name = 'todo_ddc',
   version = '1.0',
+  base_path = '//:lib',
   dart_sources= glob(['lib/**/*.dart']),
-  html_templates= glob(['lib/**/*.html']))
+  html_templates= glob(['lib/**'],exclude=['lib/**/*.dart']))

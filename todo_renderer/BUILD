@@ -7,5 +7,6 @@ polymer_library(
   deps=['@polymer_element//:library','@js//:library','//todo_common'],
   package_name = 'todo_renderer',
   version = '1.0',
+  base_path="//todo_renderer:lib",
   dart_sources= glob(['lib/**/*.dart']),
-  html_templates= glob(['lib/**/*.html']))
+  html_templates= glob(['lib/**'],exclude=['lib/**/*.dart']))
