@@ -13,6 +13,7 @@ polymer_library(
     '//todo_sample1'],
   package_name = 'todo_ddc',
   version = '1.0',
+  export_sdk = 1,
   base_path = '//:lib',
   dart_sources= glob(['lib/**/*.dart']),
   html_templates= glob(['lib/**','web/**'],exclude=['**/*.dart']))

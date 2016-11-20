@@ -1,27 +1,22 @@
 <html>
 <head>
     <script src='require.js'></script>
-    <script src="polymer_element/src/webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="external/polymer_element/src/webcomponentsjs/webcomponents-lite.js"></script>
     <script>
     /* this script must run before Polymer is imported */
     window.Polymer = {
       dom: 'shadow'
     };
   </script>
-    <link href="polymer_element/src/polymer/polymer.html" rel="import">
-    <link href='polymer_element/src/paper-styles/paper-styles.html' rel='import'>
-    <link href='polymer_element/src/paper-styles/default-theme.html' rel='import'>
+    <link href="external/polymer_element/src/polymer/polymer.html" rel="import">
+    <link href='external/polymer_element/src/paper-styles/paper-styles.html' rel='import'>
+    <link href='external/polymer_element/src/paper-styles/default-theme.html' rel='import'>
     <link href="todo_main/todo_main.html" rel="import">
-    <link rel='import' href='todo_sample1/my-comp.html'>
+    <!--link rel='import' href='todo_sample1/my-comp.html'-->
 </head>
 <body>
 
   <todo-main></todo-main>
 
-  <div>
-    <my-comp></my-comp>
-    <my-comp></my-comp>
-    <my-comp></my-comp>
-  </div>
 </body>
 </html>
