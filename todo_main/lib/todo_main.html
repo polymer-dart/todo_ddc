@@ -1,14 +1,12 @@
-<base href='../'>
+<link rel='import' href='../external/polymer_element/src/paper-input/paper-input.html' >
+<link rel='import' href='../external/polymer_element/src/iron-input/iron-input.html' >
+<link rel='import' href='../external/polymer_element/src/paper-icon-button/paper-icon-button.html' >
 
-<link rel='import' href='external/polymer_element/src/paper-input/paper-input.html' >
-<link rel='import' href='external/polymer_element/src/iron-input/iron-input.html' >
-<link rel='import' href='external/polymer_element/src/paper-icon-button/paper-icon-button.html' >
-
-<link rel='import' href='external/polymer_element/src/iron-flex-layout/iron-flex-layout.html' >
-<link rel='import' href='external/polymer_element/src/iron-icons/iron-icons.html' >
-<link rel='import' href='external/polymer_element/src/iron-icon/iron-icon.html' >
-<link rel='import' href='external/polymer_element/src/paper-button/paper-button.html'>
-<link rel='import' href='todo_renderer/todo_renderer.html' >
+<link rel='import' href='../external/polymer_element/src/iron-flex-layout/iron-flex-layout.html' >
+<link rel='import' href='../external/polymer_element/src/iron-icons/iron-icons.html' >
+<link rel='import' href='../external/polymer_element/src/iron-icon/iron-icon.html' >
+<link rel='import' href='../external/polymer_element/src/paper-button/paper-button.html'>
+<link rel='import' href='../todo_renderer/todo_renderer.html' >
 
 
 <dom-module id='todo-main'>
@@ -26,15 +24,20 @@
       .inp > input {
         @apply --layout-flex;
       }
+
+      .inp0 {
+        @apply --layout-flex;
+      }
+
     </style>
     <div class='head'>
-<!--
-      <paper-input class='inp' label='new todo' value='{{newText}}'></paper-input>
-    -->
+
+    <paper-input class='inp0' label='new todo' value='{{newText}}'></paper-input>
+    <!--
       <iron-input class='inp' bind-value='{{newText}}'>
         <input type='text' placeholder="new todo">
       </iron-input>
-
+-->
     <paper-icon-button icon='icons:send' on-click='addTodo' disabled='[[!canAdd]]'></paper-icon-button>
   </div>
     <div>

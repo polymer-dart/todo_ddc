@@ -1,12 +1,12 @@
-<base href='../'>
-<link rel='import'  href='external/polymer_element/src/paper-checkbox/paper-checkbox.html' >
-<link rel='import'  href='external/polymer_element/src/paper-icon-button/paper-icon-button.html' >
-<link rel='import'  href='external/polymer_element/src/iron-icon/iron-icon.html' >
-<link rel='import'  href='external/polymer_element/src/iron-icons/iron-icons.html' >
-<link rel='import'  href='external/polymer_element/src/paper-material/paper-material.html' >
-<link rel='import'  href='external/polymer_element/src/paper-input/paper-input.html' >
-<link rel='import'  href='external/polymer_element/src/iron-flex-layout/iron-flex-layout.html' >
-<link rel='import' href='external/polymer_element/src/paper-dialog/paper-dialog.html' >
+
+<link rel='import'  href='../external/polymer_element/src/paper-checkbox/paper-checkbox.html' >
+<link rel='import'  href='../external/polymer_element/src/paper-icon-button/paper-icon-button.html' >
+<link rel='import'  href='../external/polymer_element/src/iron-icon/iron-icon.html' >
+<link rel='import'  href='../external/polymer_element/src/iron-icons/iron-icons.html' >
+<link rel='import'  href='../external/polymer_element/src/paper-material/paper-material.html' >
+<link rel='import'  href='../external/polymer_element/src/paper-input/paper-input.html' >
+<link rel='import'  href='../external/polymer_element/src/iron-flex-layout/iron-flex-layout.html' >
+<link rel='import' href='../external/polymer_element/src/paper-dialog/paper-dialog.html' >
 
 <dom-module id='todo-renderer'>
   <template>
@@ -22,7 +22,7 @@
 
       }
 
-      .todoText > input {
+      .todoText > paper-input {
         @apply --layout-flex;
       }
 
@@ -45,7 +45,7 @@
 
       <dom-if if='[[editing]]' on-dom-change='domChanged1'>
         <template >
-          <div class='todoText' ><input value='{{myTodo.text::input}}' on-blur='finishEdit'></div>
+          <div class='todoText' ><paper-input value='{{myTodo.text}}' on-blur='finishEdit'></paper-input></div>
         </template>
       </dom-if>
 
