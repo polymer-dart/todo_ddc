@@ -4,7 +4,7 @@ import 'package:polymer_element/polymer_element.dart';
 import 'package:polymer_element/paper_dialog.dart';
 import 'dart:async';
 
-@PolymerRegister('todo-renderer', template: 'todo_renderer.html')
+@PolymerRegister('todo-renderer', template: 'todo_renderer.html',uses:const [PaperDialog])
 class TodoRenderer extends PolymerElement {
   TodoDTO myTodo;
   bool editing = false;

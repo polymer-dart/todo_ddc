@@ -10,7 +10,8 @@ polymer_library(
     '//todo_common',
     '//todo_main',
     '//todo_renderer',
-    '//todo_sample1'],
+    #'//todo_sample1'
+  ],
   package_name = 'todo_ddc',
   version = '1.0',
   export_sdk = 1,

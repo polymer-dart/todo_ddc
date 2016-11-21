@@ -2,12 +2,13 @@ import 'dart:html';
 import 'package:polymer_element/polymer_element.dart';
 import 'package:todo_common/model.dart';
 import 'package:polymer_element/observe.dart' as observe;
+import 'package:todo_renderer/todo_renderer.dart';
 
 /**
  * A sample main
  */
 
-@PolymerRegister('todo-main', template: 'todo_main.html')
+@PolymerRegister('todo-main', template: 'todo_main.html', uses:const [TodoRenderer])
 class TodoMain extends PolymerElement {
   String newText = "";
   List<TodoDTO> todos = [];

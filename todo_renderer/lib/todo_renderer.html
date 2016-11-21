@@ -1,4 +1,3 @@
-
 <link rel='import'  href='../external/polymer_element/src/paper-checkbox/paper-checkbox.html' >
 <link rel='import'  href='../external/polymer_element/src/paper-icon-button/paper-icon-button.html' >
 <link rel='import'  href='../external/polymer_element/src/iron-icon/iron-icon.html' >
@@ -7,7 +6,6 @@
 <link rel='import'  href='../external/polymer_element/src/paper-input/paper-input.html' >
 <link rel='import'  href='../external/polymer_element/src/iron-flex-layout/iron-flex-layout.html' >
 <link rel='import' href='../external/polymer_element/src/paper-dialog/paper-dialog.html' >
-
 <dom-module id='todo-renderer'>
   <template>
     <style>
@@ -60,7 +58,7 @@
       <paper-dialog id='dlg' opened='{{askConfirm}}'>
         <h2>Want to remove ? </h2>
         <p>
-          Please confirm if you want to delete it
+          Please confirm if you want to delete this note...
         </p>
         <div class='.buttons'>
           <paper-button dialog-confirm on-click='removeConfirmed'>Ok</paper-button>

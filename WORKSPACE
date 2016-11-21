@@ -1,5 +1,6 @@
 local_repository(
  name='polymerize',
+ #path='../devc_builder'
  path='../bazel_polymerize_rules'
 )
 
