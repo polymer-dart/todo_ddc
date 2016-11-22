@@ -1,14 +1,26 @@
 import 'dart:html';
+import 'package:polymer_element/iron_flex_layout.dart';
+import 'package:polymer_element/iron_icon.dart';
+import 'package:polymer_element/iron_icons.dart';
 import 'package:polymer_element/polymer_element.dart';
 import 'package:todo_common/model.dart';
 import 'package:polymer_element/observe.dart' as observe;
 import 'package:todo_renderer/todo_renderer.dart';
+import 'package:polymer_element/paper_input.dart';
+import 'package:polymer_element/paper_icon_button.dart';
+
 
 /**
  * A sample main
  */
 
-@PolymerRegister('todo-main', template: 'todo_main.html', uses:const [TodoRenderer])
+@PolymerRegister('todo-main', template: 'todo_main.html', uses:const [
+  PaperInput,
+  PaperIconButton,
+  IronFlexLayout,
+  IronIcons,
+  IronIcon,
+  TodoRenderer])
 class TodoMain extends PolymerElement {
   String newText = "";
   List<TodoDTO> todos = [];

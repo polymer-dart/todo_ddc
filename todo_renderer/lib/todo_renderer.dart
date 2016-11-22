@@ -2,9 +2,25 @@ import 'dart:html';
 import 'package:todo_common/model.dart';
 import 'package:polymer_element/polymer_element.dart';
 import 'package:polymer_element/paper_dialog.dart';
+import 'package:polymer_element/paper_checkbox.dart';
+import 'package:polymer_element/paper_icon_button.dart';
+import 'package:polymer_element/iron_icon.dart';
+import 'package:polymer_element/iron_icons.dart';
+import 'package:polymer_element/paper_material.dart';
+import 'package:polymer_element/paper_input.dart';
+import 'package:polymer_element/iron_flex_layout.dart';
+
 import 'dart:async';
 
-@PolymerRegister('todo-renderer', template: 'todo_renderer.html',uses:const [PaperDialog])
+@PolymerRegister('todo-renderer', template: 'todo_renderer.html',uses:const [
+  PaperCheckbox,
+  PaperIconButton,
+  IronIcon,
+  IronIcons,
+  PaperMaterial,
+  PaperInput,
+  IronFlexLayout,
+  PaperDialog])
 class TodoRenderer extends PolymerElement {
   TodoDTO myTodo;
   bool editing = false;
@@ -27,7 +43,8 @@ class TodoRenderer extends PolymerElement {
 
     if (editing) {
       new Future((){
-        InputElement ie = this.shadowRoot.querySelector("input");
+        PaperInput in0 = (this.shadowRoot.querySelector("paper-input") as PaperInput);
+        InputElement ie = in0.inputElement;
         ie.setSelectionRange(0, myTodo.text.length);
         ie.focus();
       });
