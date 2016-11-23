@@ -1,4 +1,5 @@
 import 'dart:html';
+
 import 'package:todo_common/model.dart';
 import 'package:polymer_element/polymer_element.dart';
 import 'package:polymer_element/paper_dialog.dart';
@@ -43,10 +44,11 @@ class TodoRenderer extends PolymerElement {
 
     if (editing) {
       new Future((){
-        PaperInput in0 = (this.shadowRoot.querySelector("paper-input") as PaperInput);
-        InputElement ie = in0.inputElement;
-        ie.setSelectionRange(0, myTodo.text.length);
-        ie.focus();
+        PaperInput in0 = this.shadowRoot.querySelector("paper-input");
+
+        InputElement iee = in0.shadowRoot.querySelector('input');
+        iee.setSelectionRange(0, myTodo.text.length);
+        iee.focus();
       });
     }
   }
