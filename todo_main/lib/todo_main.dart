@@ -8,6 +8,7 @@ import 'package:polymer_element/observe.dart' as observe;
 import 'package:todo_renderer/todo_renderer.dart';
 import 'package:polymer_element/paper_input.dart';
 import 'package:polymer_element/paper_icon_button.dart';
+import 'package:polymer_element/paper_button.dart';
 
 
 /**
@@ -20,6 +21,7 @@ import 'package:polymer_element/paper_icon_button.dart';
   IronFlexLayout,
   IronIcons,
   IronIcon,
+  PaperButton,
   TodoRenderer])
 class TodoMain extends PolymerElement {
   String newText = "";
