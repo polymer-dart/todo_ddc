@@ -1,6 +1,5 @@
 <html>
 <head>
-    <script src='require.js'></script>
     <script src="external/polymer_element/src/webcomponentsjs/webcomponents-lite.js"></script>
     <script>
     /* this script must run before Polymer is imported */
@@ -8,10 +7,16 @@
       dom: 'shadow'
     };
   </script>
-    <link href="external/polymer_element/src/polymer/polymer.html" rel="import">
-    <link href='external/polymer_element/src/paper-styles/paper-styles.html' rel='import'>
-    <link href='external/polymer_element/src/paper-styles/default-theme.html' rel='import'>
-    <link href="todo_main/todo_main.html" rel="import">
+    <link rel='import' href='imd.html'>
+    <link rel='import' href="external/polymer_element/src/polymer/polymer.html">
+    <link rel='import' href='external/polymer_element/src/paper-styles/paper-styles.html'>
+    <link rel='import' href='external/polymer_element/src/paper-styles/default-theme.html'>
+
+    <!-- load observe support -->
+    <link rel='import' href='external/polymer_element/observe_support.html'>
+
+    <!-- load main component -->
+    <link rel='import' href="todo_main/todo_main.html" rel="import">
     <!--link rel='import' href='todo_sample1/my-comp.html'-->
 </head>
 <body>

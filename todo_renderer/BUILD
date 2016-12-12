@@ -4,7 +4,10 @@ package(default_visibility=['//visibility:public'])
 
 polymer_library(
   name='todo_renderer',
-  deps=['@polymer_element//:polymer_element','@js//:js','//todo_common'],
+  deps=[
+    '@polymer_element//:polymer_element',
+    '@js//:js',
+    '//todo_common'],
   package_name = 'todo_renderer',
   version = '1.0',
   base_path="//todo_renderer:lib",
