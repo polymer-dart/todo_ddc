@@ -21,7 +21,7 @@ load('@polymerize//:polymerize_workspace.bzl',
 #init_polymerize()
 
 # DEV MODE
-init_local_polymerize('/home/vittorio/Develop/dart/devc_builder')
+init_local_polymerize('/home/vittorio/Develop/dart/polymerize')
 
 dart_library(
   name='js',
