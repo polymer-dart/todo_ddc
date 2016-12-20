@@ -20,8 +20,13 @@ load('@polymerize//:polymerize_workspace.bzl',
 # RELEASE
 #init_polymerize()
 
+
 # DEV MODE
 init_local_polymerize('/home/vittorio/Develop/dart/polymerize')
+
+##
+## All the dart libraries we depend on
+##
 
 dart_library(
   name='js',
