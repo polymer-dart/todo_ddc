@@ -34,6 +34,14 @@ dart_library(
   version='0.11.3+1')
 
 dart_library(
+  name='polymer_elements',
+  deps= ['@polymer_element//:polymer_element','@js//:js'],
+  src_path='/home/vittorio/Develop/dart/polymer_elements', # DEV MODE
+#  pub_host = 'http://pub.drafintech.it:5001/api',
+  package_name='polymer_elements',
+  version='0.1.0+1')
+
+dart_library(
   name='polymer_element',
   deps= ['@js//:js'],
   src_path='/home/vittorio/Develop/dart/polymer_element', # DEV MODE

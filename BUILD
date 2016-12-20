@@ -30,6 +30,7 @@ bower(
     name = "main",
     deps = [
         "@polymer_element//:polymer_element",
+        "@polymer_elements//:polymer_elements",
     ],
 )
 

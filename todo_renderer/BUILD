@@ -1,15 +1,21 @@
-load('@polymerize//:polymerize.bzl','polymer_library')
+load("@polymerize//:polymerize.bzl", "polymer_library")
 
-package(default_visibility=['//visibility:public'])
+package(default_visibility = ["//visibility:public"])
 
 polymer_library(
-  name='todo_renderer',
-  deps=[
-    '@polymer_element//:polymer_element',
-    '@js//:js',
-    '//todo_common'],
-  package_name = 'todo_renderer',
-  version = '1.0',
-  base_path="//todo_renderer:lib",
-  dart_sources= glob(['lib/**/*.dart']),
-  html_templates= glob(['lib/**'],exclude=['lib/**/*.dart']))
+    name = "todo_renderer",
+    package_name = "todo_renderer",
+    base_path = "//todo_renderer:lib",
+    dart_sources = glob(["lib/**/*.dart"]),
+    html_templates = glob(
+        ["lib/**"],
+        exclude = ["lib/**/*.dart"],
+    ),
+    version = "1.0",
+    deps = [
+        "@js//:js",
+        "@polymer_element//:polymer_element",
+        "@polymer_elements//:polymer_elements",
+        "//todo_common",
+    ],
+)

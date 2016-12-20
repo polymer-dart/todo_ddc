@@ -13,3 +13,5 @@ dependencies:
 dependency_overrides:
  polymer_element:
   path: ../polymer_element
+ polymer_elements:
+  path: ../polymer_elements
