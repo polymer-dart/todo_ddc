@@ -56,7 +56,7 @@ class TodoRenderer extends PolymerElement {
   removeMe(Event ev,details) {
     //askConfirm = true;
     PaperDialog dlg = shadowRoot.querySelector('#dlg');
-    dlg.open();
+    dlg.opened = true;
     print("DIALOG : ${dlg} , ${dlg.opened}");
   }
 
