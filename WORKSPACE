@@ -7,7 +7,7 @@
 # RELEASE
 git_repository(
  name='polymerize',
- tag='v_0_0_4',
+ tag='v_0_0_5',
  remote='https://github.com/dam0vm3nt/bazel_polymerize_rules')
 
 
