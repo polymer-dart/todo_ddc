@@ -28,6 +28,9 @@ polymer_library(
 
 bower(
     name = "main",
+    resolutions = {
+        "polymer": "2.0-preview",
+    },
     deps = [
         "@polymer_element//:polymer_element",
         "@polymer_elements//:polymer_elements",
