@@ -18,6 +18,7 @@ polymer_library(
     version = "1.0",
     deps = [
         "@polymer_element//:polymer_element",
+        "@polymer_elements//:polymer_elements",
         "@js//:js",
         "//todo_common",
         "//todo_main",
