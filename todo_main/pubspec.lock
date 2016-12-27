@@ -18,13 +18,13 @@ packages:
       path: "../../polymer_element"
       relative: true
     source: path
-    version: "0.1.0+1"
+    version: "0.2.0"
   polymer_elements:
     description:
       path: "../../polymer_elements"
       relative: true
     source: path
-    version: "0.1.0+1"
+    version: "2.0.0-preview.0"
   todo_common:
     description:
       path: "../todo_common"
