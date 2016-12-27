@@ -5,8 +5,6 @@ dependencies:
  logging: any
  todo_main:
    path: todo_main
- todo_sample1:
-   path: todo_sample1
  polymer_element: "^0.0.6"
 # polymer_elements:
 #  git:
