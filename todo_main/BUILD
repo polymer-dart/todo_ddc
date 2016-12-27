@@ -6,7 +6,6 @@ polymer_library(
     name = "todo_main",
     package_name = "todo_main",
     base_path = "//todo_main:lib",
-    #asset_output =  ['todo_main.html'],
     dart_sources = glob(["lib/**/*.dart"]),
     html_templates = glob(
         ["lib/**"],
@@ -14,10 +13,6 @@ polymer_library(
     ),
     version = "1.0",
     deps = [
-        "@js//:js",
-        "@polymer_element//:polymer_element",
-        "@polymer_elements//:polymer_elements",
-        "//todo_common",
-        "//todo_renderer",
+        "@logging//:logging","@js//:js","@polymer_element//:polymer_element","//todo_common","@polymer_elements//:polymer_elements","//todo_renderer"
     ],
 )

@@ -5,7 +5,7 @@ dependencies:
  logging: any
  todo_main:
    path: todo_main
- polymer_element: "^0.0.6"
+ polymer_element: "^0.2.0"
 # polymer_elements:
 #  git:
 #    url: https://github.com/dam0vm3nt/polymerize_elements.git

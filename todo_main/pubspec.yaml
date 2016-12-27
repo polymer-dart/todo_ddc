@@ -8,6 +8,7 @@ dependencies:
  todo_renderer:
    path: ../todo_renderer
  polymer_element: any
+# js: any
  polymer_elements: any
 dependency_overrides:
  polymer_element: 

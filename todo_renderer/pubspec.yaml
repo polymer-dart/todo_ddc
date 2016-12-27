@@ -6,6 +6,7 @@ dependencies:
  todo_common:
    path: ../todo_common
  polymer_element: any
+# js: any
  polymer_elements: any
 #   path: ../../polymer_element
 dependency_overrides:

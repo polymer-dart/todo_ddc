@@ -15,26 +15,28 @@ polymer_library(
         ],
         exclude = ["**/*.dart"],
     ),
-    version = "1.0",
+    version = "0.0.1",
     deps = [
-        "@polymer_element//:polymer_element",
-        "@polymer_elements//:polymer_elements",
-        "@js//:js",
-        "//todo_common",
-        "//todo_main",
-        "//todo_renderer",
-        #'//todo_sample1'
+        "@logging//:logging","@js//:js","@polymer_element//:polymer_element","//todo_common","@polymer_elements//:polymer_elements","//todo_renderer","//todo_main"
     ],
 )
 
+
+# TODO : IMPLEMENT THIS AS AN ASPECT
 bower(
     name = "main",
     resolutions = {
         "polymer": "2.0-preview",
     },
     deps = [
-        "@polymer_element//:polymer_element",
-        "@polymer_elements//:polymer_elements",
+    ":todo_ddc",
+         "@logging//:logging",
+         "@polymer_element//:polymer_element",
+         "@js//:js",
+         "//todo_main",
+         "//todo_renderer",
+         "//todo_common",
+         "@polymer_elements//:polymer_elements"
     ],
 )
 
