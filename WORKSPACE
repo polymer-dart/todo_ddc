@@ -21,7 +21,7 @@ dart_library(
   name='logging',
   deps= [],
   package_name='logging',
-  pub_host = 'http://pub.drafintech.it:5001/api',
+  pub_host = 'https://pub.dartlang.org/api',
   version='0.11.3+1')
 
 
@@ -29,7 +29,7 @@ dart_library(
   name='polymer_element',
   deps= ["@js//:js"],
   package_name='polymer_element',
-  pub_host = 'http://pub.drafintech.it:5001/api',
+  pub_host = 'https://pub.dartlang.org/api',
   version='0.2.0')
 
 
@@ -37,7 +37,7 @@ dart_library(
   name='js',
   deps= [],
   package_name='js',
-  pub_host = 'http://pub.drafintech.it:5001/api',
+  pub_host = 'https://pub.dartlang.org/api',
   version='0.6.1')
 
 
