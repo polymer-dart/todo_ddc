@@ -29,10 +29,9 @@ dart_library(
 dart_library(
   name='polymer_element',
   deps= ["@js//:js"],
-  src_path='/home/vittorio/Develop/dart/polymer_element',
-  #pub_host = 'http://pub.drafintech.it:5001/api',
   package_name='polymer_element',
-  version='0.3.0')
+  pub_host = 'http://pub.drafintech.it:5001/api',
+  version='0.3.1')
 
 
 dart_library(
@@ -43,12 +42,10 @@ dart_library(
   version='0.6.1')
 
 
-dart_library(
-  name='polymer_elements',
-  deps= ["@js//:js","@polymer_element//:polymer_element"],
-  src_path='/home/vittorio/Develop/dart/polymer_elements',
-  #pub_host = 'http://pub.drafintech.it:5001/api',
-  package_name='polymer_elements',
-  version='2.0.0-preview.0')
+git_repository(
+    name = "polymer_elements",
+    remote = "https://github.com/dam0vm3nt/polymerize_elements.git",
+    tag = "v0.1.7",
+)
 
 
