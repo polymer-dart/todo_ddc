@@ -1,17 +1,16 @@
 # Polymerize rules repository
-
-local_repository(
+git_repository(
  name='polymerize',
- path='/home/vittorio/Develop/dart/bazel_polymerize_rules'
-)
+ tag='v0.0.11',
+ remote='https://github.com/dam0vm3nt/bazel_polymerize_rules')
 
 # Load Polymerize rules
 load('@polymerize//:polymerize_workspace.bzl',
     'dart_library',
-    'init_local_polymerize')
+    'init_polymerize')
 
 # Init
-init_local_polymerize('/home/vittorio/Develop/dart/polymerize')
+init_polymerize()
 
 
 ##
