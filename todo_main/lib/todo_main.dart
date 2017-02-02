@@ -14,8 +14,16 @@ import 'package:polymer_elements/paper_button.dart';
  * A sample main
  */
 
-@PolymerRegister('todo-main', template: 'todo_main.html', uses: const [PaperInput, PaperIconButton, IronFlexLayout, IronIcons, IronIcon, PaperButton, TodoRenderer])
-class TodoMain extends PolymerElement {
+@PolymerRegister('todo-main', template: 'todo_main.html', uses: const [
+  PaperInput,
+  PaperIconButton,
+  IronFlexLayout,
+  IronIcons,
+  IronIcon,
+  PaperButton,
+  TodoRenderer
+])
+abstract class TodoMain extends PolymerElement {
   String newText = "";
   List<TodoDTO> todos = [];
   bool canAdd = false;
@@ -43,6 +51,14 @@ class TodoMain extends PolymerElement {
     todos = support.makeObservable(todos, (prop, oldv, newv) {
       print("TODOS CHANGED ${prop} : ${oldv} => ${newv}");
       notifyPath('todos.${prop}');
+    });
+
+    // load metadata
+    var p = await observe.getMetadata(TodoMain);
+    print("Metadata : ${p['props']}");
+
+    (p['props'] as List).forEach((String pname) {
+      print("Observing :${pname}");
     });
   }
 }
