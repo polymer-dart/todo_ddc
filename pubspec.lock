@@ -4,19 +4,19 @@ packages:
   js:
     description:
       name: js
-      url: "http://pub.drafintech.it:5001"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.1"
   logging:
     description:
       name: logging
-      url: "http://pub.drafintech.it:5001"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "0.11.3+1"
   polymer_element:
     description:
       name: polymer_element
-      url: "http://pub.drafintech.it:5001"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.1"
   polymer_elements:

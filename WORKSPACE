@@ -1,7 +1,7 @@
 # Polymerize rules repository
 git_repository(
  name='polymerize',
- tag='v0.0.11',
+ tag='latest-stable',
  remote='https://github.com/dam0vm3nt/bazel_polymerize_rules')
 
 # Load Polymerize rules
@@ -21,7 +21,7 @@ dart_library(
   name='logging',
   deps= [],
   package_name='logging',
-  pub_host = 'http://pub.drafintech.it:5001/api',
+  pub_host = 'https://pub.dartlang.org/api',
   version='0.11.3+1')
 
 
@@ -29,7 +29,7 @@ dart_library(
   name='polymer_element',
   deps= ["@js//:js"],
   package_name='polymer_element',
-  pub_host = 'http://pub.drafintech.it:5001/api',
+  pub_host = 'https://pub.dartlang.org/api',
   version='0.3.1')
 
 
@@ -37,7 +37,7 @@ dart_library(
   name='js',
   deps= [],
   package_name='js',
-  pub_host = 'http://pub.drafintech.it:5001/api',
+  pub_host = 'https://pub.dartlang.org/api',
   version='0.6.1')
 
 
