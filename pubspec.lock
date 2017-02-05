@@ -4,27 +4,26 @@ packages:
   js:
     description:
       name: js
-      url: "https://pub.dartlang.org"
+      url: "http://pub.drafintech.it:5001"
     source: hosted
     version: "0.6.1"
   logging:
     description:
       name: logging
-      url: "https://pub.dartlang.org"
+      url: "http://pub.drafintech.it:5001"
     source: hosted
     version: "0.11.3+1"
   polymer_element:
     description:
-      name: polymer_element
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "/home/vittorio/Develop/dart/polymer_element"
+      relative: false
+    source: path
     version: "0.3.1"
   polymer_elements:
     description:
-      ref: "v0.1.7"
-      resolved-ref: "301c9c402c4695a3981051f7e2fa8226f74b98ac"
-      url: "https://github.com/dam0vm3nt/polymerize_elements.git"
-    source: git
+      path: "/home/vittorio/Develop/dart/polymer_elements"
+      relative: false
+    source: path
     version: "2.0.0-preview.1"
   todo_common:
     description:

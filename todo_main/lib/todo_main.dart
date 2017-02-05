@@ -9,6 +9,7 @@ import 'package:todo_renderer/todo_renderer.dart';
 import 'package:polymer_elements/paper_input.dart';
 import 'package:polymer_elements/paper_icon_button.dart';
 import 'package:polymer_elements/paper_button.dart';
+import 'package:polymer_elements/iron_fit_behavior.dart';
 
 /**
  * A sample main
@@ -23,7 +24,7 @@ import 'package:polymer_elements/paper_button.dart';
   PaperButton,
   TodoRenderer
 ])
-abstract class TodoMain extends PolymerElement {
+abstract class TodoMain extends PolymerElement implements IronFitBehavior {
   String newText = "";
   List<TodoDTO> todos = [];
   bool canAdd = false;
