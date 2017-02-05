@@ -1,7 +1,7 @@
 # Polymerize rules repository
 git_repository(
  name='polymerize',
- tag='latest-stable',
+ tag='v0.0.11',
  remote='https://github.com/dam0vm3nt/bazel_polymerize_rules')
 
 # Load Polymerize rules
