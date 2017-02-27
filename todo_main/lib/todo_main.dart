@@ -1,4 +1,4 @@
-import 'dart:html';
+import 'package:html5/html.dart';
 import 'package:polymer_elements/iron_flex_layout.dart';
 import 'package:polymer_elements/iron_icon.dart';
 import 'package:polymer_elements/iron_icons.dart';

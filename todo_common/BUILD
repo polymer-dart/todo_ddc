@@ -13,6 +13,6 @@ polymer_library(
     ),
     version = "1.0",
     deps = [
-        "@logging//:logging","@js//:js","@polymer_element//:polymer_element"
+        "@logging//:logging","@js//:js","@html5//:html5","@polymer_element//:polymer_element"
     ],
 )

@@ -17,6 +17,8 @@ dependency_overrides:
   path: /home/vittorio/Develop/dart/polymer_element
  polymer_elements:
   path: /home/vittorio/Develop/dart/polymer_elements
+ html5:
+  path: /home/vittorio/Develop/dart/html_lib
 # polymer_elements:
 #  git:
 #    url: https://github.com/dam0vm3nt/polymerize_elements.git

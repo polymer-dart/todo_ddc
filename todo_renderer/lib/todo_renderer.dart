@@ -1,4 +1,4 @@
-import 'dart:html';
+import 'package:html5/html.dart';
 
 import 'package:todo_common/model.dart';
 import 'package:polymer_element/polymer_element.dart';
@@ -22,7 +22,7 @@ import 'dart:async';
   PaperInput,
   IronFlexLayout,
   PaperDialog])
-class TodoRenderer extends PolymerElement {
+abstract class TodoRenderer extends PolymerElement {
   TodoDTO myTodo;
   bool editing = false;
   bool askConfirm = false;
@@ -46,7 +46,7 @@ class TodoRenderer extends PolymerElement {
       new Future((){
         PaperInput in0 = this.shadowRoot.querySelector("paper-input");
 
-        InputElement iee = in0.shadowRoot.querySelector('input');
+        HTMLInputElement iee = in0.shadowRoot.querySelector('input');
         iee.setSelectionRange(0, myTodo.text.length);
         iee.focus();
       });
