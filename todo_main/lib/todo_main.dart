@@ -36,15 +36,18 @@ abstract class TodoMain extends PolymerElement implements IronFitBehavior {
 
   addTodo(Event ev, details) async {
     todos.add(new TodoDTO(text: newText));
+    todos = todos;
     newText = "";
   }
 
   void removeIt(Event ev, TodoDTO todo) {
     todos.remove(todo);
+    todos = todos;
   }
 
-  connectedCallback() async {
+  connectedCallback() /*async*/ {
     super.connectedCallback();
+    /*
     print("Load Observe Support");
     observe.ObserveSupport support = await observe.ObserveSupport.load();
 
@@ -60,6 +63,6 @@ abstract class TodoMain extends PolymerElement implements IronFitBehavior {
 
     (p['props'] as List).forEach((String pname) {
       print("Observing :${pname}");
-    });
+    });*/
   }
 }

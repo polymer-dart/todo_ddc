@@ -27,7 +27,7 @@
         <input type='text' placeholder="new todo">
       </iron-input>
 -->
-    <paper-icon-button icon='icons:send' on-click='addTodo' ></paper-icon-button>
+    <paper-icon-button icon='icons:send' on-click='addTodo' disabled='[[!canAdd]]'></paper-icon-button>
   </div>
     <div>
       <dom-repeat items='[[todos]]' as='todo'>
