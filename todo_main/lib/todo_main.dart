@@ -1,4 +1,4 @@
-import 'dart:html';
+import 'package:html5/html.dart';
 import 'package:polymer_elements/iron_flex_layout.dart';
 import 'package:polymer_elements/iron_icon.dart';
 import 'package:polymer_elements/iron_icons.dart';
@@ -9,6 +9,7 @@ import 'package:todo_renderer/todo_renderer.dart';
 import 'package:polymer_elements/paper_input.dart';
 import 'package:polymer_elements/paper_icon_button.dart';
 import 'package:polymer_elements/paper_button.dart';
+import 'package:polymer_elements/iron_fit_behavior.dart';
 
 /**
  * A sample main
@@ -23,7 +24,7 @@ import 'package:polymer_elements/paper_button.dart';
   PaperButton,
   TodoRenderer
 ])
-abstract class TodoMain extends PolymerElement {
+abstract class TodoMain extends PolymerElement implements IronFitBehavior {
   String newText = "";
   List<TodoDTO> todos = [];
   bool canAdd = false;
@@ -35,15 +36,18 @@ abstract class TodoMain extends PolymerElement {
 
   addTodo(Event ev, details) async {
     todos.add(new TodoDTO(text: newText));
+    todos = todos;
     newText = "";
   }
 
   void removeIt(Event ev, TodoDTO todo) {
     todos.remove(todo);
+    todos = todos;
   }
 
-  connectedCallback() async {
+  connectedCallback() /*async*/ {
     super.connectedCallback();
+    /*
     print("Load Observe Support");
     observe.ObserveSupport support = await observe.ObserveSupport.load();
 
@@ -59,6 +63,6 @@ abstract class TodoMain extends PolymerElement {
 
     (p['props'] as List).forEach((String pname) {
       print("Observing :${pname}");
-    });
+    });*/
   }
 }
