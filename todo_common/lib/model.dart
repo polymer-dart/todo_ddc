@@ -27,13 +27,13 @@ myReducer(MyState state, ReduxAction action) =>
 
 List<TodoDTO> reduceTodos(List<TodoDTO> todos, ReduxAction action) {
   switch (action.type) {
-    case 'ADD_TODO':
+    case Actions.ADD_TODO:
       return new List()
         ..addAll(todos ?? [])
         ..add((action as AddTodoAction).todo);
-    case 'REMOVE_TODO':
+    case Actions.REMOVE_TODO:
       return new List()
-        ..addAll(todos)
+        ..addAll(todos ?? [])
         ..removeAt((action as RemoveTodoAction).index);
     default:
       return todos;
@@ -50,6 +50,16 @@ class MyState {
 
 @myStore
 class MyReduxBehavior extends ReduxBehavior {}
+
+class Actions {
+  static const String ADD_TODO = 'ADD_TODO';
+  static const String REMOVE_TODO = 'REMOVE_TODO';
+
+  static AddTodoAction createAddTodoAction(TodoDTO todo) =>
+      new AddTodoAction(type: ADD_TODO, todo: todo);
+  static RemoveTodoAction createRemoveTodoAction(int index) =>
+      new RemoveTodoAction(type: REMOVE_TODO, index: index);
+}
 
 @JS()
 @anonymous

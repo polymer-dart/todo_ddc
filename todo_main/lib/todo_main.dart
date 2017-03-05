@@ -39,48 +39,24 @@ abstract class TodoMain extends PolymerElement
 
   @reduxActionFactory
   static AddTodoAction addTodoAction(TodoDTO newTodo) =>
-      new AddTodoAction(type: 'ADD_TODO', todo: newTodo);
+      Actions.createAddTodoAction(newTodo);
 
   @reduxActionFactory
   static RemoveTodoAction removeTodoAction(int index) =>
-      new RemoveTodoAction(type: 'REMOVE_TODO', index: index);
+      Actions.createRemoveTodoAction(index);
 
   addTodo(Event ev, details) async {
-    //todos.add(new TodoDTO(text: newText));
-    //todos = todos;
-    //notifyPath('todos.${todos.length-1}');
-    //push('todos', new TodoDTO(text: newText));
     Redux.dispatch(this, 'addTodoAction', [new TodoDTO(text: newText)]);
     newText = "";
   }
 
   void removeIt(Event ev, TodoDTO todo) {
-    //todos.remove(todo);
-    //todos = todos;
     DomRepeat rpt = shadowRoot.querySelector("#rpt");
     int idx = rpt.indexForElement(ev.target);
     Redux.dispatch(this, 'removeTodoAction', [idx]);
-    //notifyPath('todos',todos);
   }
 
   connectedCallback() /*async*/ {
     super.connectedCallback();
-    /*
-    print("Load Observe Support");
-    observe.ObserveSupport support = await observe.ObserveSupport.load();
-
-    print("Observe support loaded");
-    todos = support.makeObservable(todos, (prop, oldv, newv) {
-      print("TODOS CHANGED ${prop} : ${oldv} => ${newv}");
-      notifyPath('todos.${prop}');
-    });
-
-    // load metadata
-    var p = await observe.getMetadata(TodoMain);
-    print("Metadata : ${p['props']}");
-
-    (p['props'] as List).forEach((String pname) {
-      print("Observing :${pname}");
-    });*/
   }
 }
