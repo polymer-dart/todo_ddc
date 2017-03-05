@@ -6,7 +6,7 @@ packages:
       name: html5
       url: "http://pub.drafintech.it:5001"
     source: hosted
-    version: "0.0.3"
+    version: "0.0.4"
   js:
     description:
       name: js
@@ -24,12 +24,13 @@ packages:
       path: "/home/vittorio/Develop/dart/polymer_element"
       relative: false
     source: path
-    version: "0.3.1"
+    version: "0.4.1"
   polymer_elements:
     description:
-      path: "/home/vittorio/Develop/dart/polymer_elements"
-      relative: false
-    source: path
+      ref: "v0.1.8"
+      resolved-ref: "60481275a1d3329400826abdfb4de605f84b1299"
+      url: "https://github.com/dam0vm3nt/polymerize_elements.git"
+    source: git
     version: "2.0.0-preview.1"
   todo_common:
     description:

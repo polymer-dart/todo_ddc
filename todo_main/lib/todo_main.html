@@ -30,7 +30,7 @@
     <paper-icon-button icon='icons:send' on-click='addTodo' disabled='[[!canAdd]]'></paper-icon-button>
   </div>
     <div>
-      <dom-repeat items='[[todos]]' as='todo'>
+      <dom-repeat id='rpt' items='[[todos]]' as='todo'>
         <template>
           <todo-renderer my-todo='[[todo]]' on-remove-me='removeIt'></todo-renderer>
         </template>

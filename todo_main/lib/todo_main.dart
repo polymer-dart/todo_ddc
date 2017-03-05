@@ -9,7 +9,8 @@ import 'package:todo_renderer/todo_renderer.dart';
 import 'package:polymer_elements/paper_input.dart';
 import 'package:polymer_elements/paper_icon_button.dart';
 import 'package:polymer_elements/paper_button.dart';
-import 'package:polymer_elements/iron_fit_behavior.dart';
+import 'package:polymer_elements/iron_validatable_behavior.dart';
+import 'package:js/js.dart';
 
 /**
  * A sample main
@@ -24,8 +25,10 @@ import 'package:polymer_elements/iron_fit_behavior.dart';
   PaperButton,
   TodoRenderer
 ])
-abstract class TodoMain extends PolymerElement implements IronFitBehavior {
+abstract class TodoMain extends PolymerElement
+    implements MutableDataBehavior, MyReduxBehavior {
   String newText = "";
+  @Property(statePath: 'todos')
   List<TodoDTO> todos = [];
   bool canAdd = false;
 
@@ -34,15 +37,30 @@ abstract class TodoMain extends PolymerElement implements IronFitBehavior {
     canAdd = newText != null && newText.isNotEmpty;
   }
 
+  @reduxActionFactory
+  static AddTodoAction addTodoAction(TodoDTO newTodo) =>
+      new AddTodoAction(type: 'ADD_TODO', todo: newTodo);
+
+  @reduxActionFactory
+  static RemoveTodoAction removeTodoAction(int index) =>
+      new RemoveTodoAction(type: 'REMOVE_TODO', index: index);
+
   addTodo(Event ev, details) async {
-    todos.add(new TodoDTO(text: newText));
-    todos = todos;
+    //todos.add(new TodoDTO(text: newText));
+    //todos = todos;
+    //notifyPath('todos.${todos.length-1}');
+    //push('todos', new TodoDTO(text: newText));
+    Redux.dispatch(this, 'addTodoAction', [new TodoDTO(text: newText)]);
     newText = "";
   }
 
   void removeIt(Event ev, TodoDTO todo) {
-    todos.remove(todo);
-    todos = todos;
+    //todos.remove(todo);
+    //todos = todos;
+    DomRepeat rpt = shadowRoot.querySelector("#rpt");
+    int idx = rpt.indexForElement(ev.target);
+    Redux.dispatch(this, 'removeTodoAction', [idx]);
+    //notifyPath('todos',todos);
   }
 
   connectedCallback() /*async*/ {
