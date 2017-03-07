@@ -22,7 +22,7 @@ import 'dart:async';
   PaperInput,
   IronFlexLayout,
   PaperDialog])
-abstract class TodoRenderer extends PolymerElement {
+abstract class TodoRenderer extends PolymerElement implements MyReduxBehavior {
   TodoDTO myTodo;
   bool editing = false;
   bool askConfirm = false;

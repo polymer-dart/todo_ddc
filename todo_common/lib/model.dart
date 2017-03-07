@@ -22,55 +22,66 @@ ModelDTO model = new ModelDTO();
 
 ModelDTO getModel() => model;
 
+/**
+ * The reducer
+ */
 myReducer(MyState state, ReduxAction action) =>
-    new MyState(todos: reduceTodos(state?.todos, action));
+    new MyState(todos: _reduceTodos(state?.todos, action));
 
-List<TodoDTO> reduceTodos(List<TodoDTO> todos, ReduxAction action) {
+/**
+ * Todo list reducer
+ */
+List<TodoDTO> _reduceTodos(List<TodoDTO> todos, ReduxAction action) {
   switch (action.type) {
     case Actions.ADD_TODO:
       return new List()
         ..addAll(todos ?? [])
-        ..add((action as AddTodoAction).todo);
+        ..add((action as ReduxAction<TodoDTO>).detail);
     case Actions.REMOVE_TODO:
       return new List()
         ..addAll(todos ?? [])
-        ..removeAt((action as RemoveTodoAction).index);
+        ..removeAt((action as ReduxAction<int>).detail);
     default:
       return todos;
   }
 }
 
+/**
+ * Store definition (needs a reducer function)
+ */
 const StoreDef myStore = const StoreDef(myReducer);
 
+/**
+ * My generic state
+ */
 class MyState {
+  /// a list of todos
   List<TodoDTO> todos;
 
   MyState({this.todos: const []});
 }
 
+/**
+ * Redux behavior associated to store `myStore`
+ */
 @myStore
 class MyReduxBehavior extends ReduxBehavior {}
 
+/**
+ * Utility class with action factories.
+ */
 class Actions {
   static const String ADD_TODO = 'ADD_TODO';
   static const String REMOVE_TODO = 'REMOVE_TODO';
 
-  static AddTodoAction createAddTodoAction(TodoDTO todo) =>
-      new AddTodoAction(type: ADD_TODO, todo: todo);
-  static RemoveTodoAction createRemoveTodoAction(int index) =>
-      new RemoveTodoAction(type: REMOVE_TODO, index: index);
-}
-
-@JS()
-@anonymous
-class AddTodoAction extends ReduxAction {
-  external TodoDTO get todo;
-  external factory AddTodoAction({String type, TodoDTO todo});
-}
-
-@JS()
-@anonymous
-class RemoveTodoAction extends ReduxAction {
-  external int get index;
-  external factory RemoveTodoAction({String type, int index});
+  /**
+   * Adds a todo to the list.
+   */
+  static ReduxAction<TodoDTO> createAddTodoAction(TodoDTO todo) =>
+      new ReduxAction(type: ADD_TODO, detail: todo);
+  /**
+   * Removes a todo from the list
+   */
+  static ReduxAction<int> createRemoveTodoAction(int index) =>
+      new ReduxAction<int>(type: REMOVE_TODO, detail: index);
 }

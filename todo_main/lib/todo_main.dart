@@ -25,8 +25,7 @@ import 'package:js/js.dart';
   PaperButton,
   TodoRenderer
 ])
-abstract class TodoMain extends PolymerElement
-    implements MutableDataBehavior, MyReduxBehavior {
+abstract class TodoMain extends PolymerElement implements MyReduxBehavior,MutableData {
   String newText = "";
   @Property(statePath: 'todos')
   List<TodoDTO> todos = [];
@@ -38,11 +37,11 @@ abstract class TodoMain extends PolymerElement
   }
 
   @reduxActionFactory
-  static AddTodoAction addTodoAction(TodoDTO newTodo) =>
+  static ReduxAction<TodoDTO> addTodoAction(TodoDTO newTodo) =>
       Actions.createAddTodoAction(newTodo);
 
   @reduxActionFactory
-  static RemoveTodoAction removeTodoAction(int index) =>
+  static ReduxAction<int> removeTodoAction(int index) =>
       Actions.createRemoveTodoAction(index);
 
   addTodo(Event ev, details) async {
@@ -54,9 +53,5 @@ abstract class TodoMain extends PolymerElement
     DomRepeat rpt = shadowRoot.querySelector("#rpt");
     int idx = rpt.indexForElement(ev.target);
     Redux.dispatch(this, 'removeTodoAction', [idx]);
-  }
-
-  connectedCallback() /*async*/ {
-    super.connectedCallback();
   }
 }
