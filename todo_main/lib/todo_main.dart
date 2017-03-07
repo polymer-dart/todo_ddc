@@ -12,6 +12,22 @@ import 'package:polymer_elements/paper_button.dart';
 import 'package:polymer_elements/iron_validatable_behavior.dart';
 import 'package:js/js.dart';
 
+@PolymerRegister('test-comp')
+abstract class MyTestComp extends PolymerElement {
+  static String get template => """
+<style>
+ :host {
+    display: block;
+    color:red;
+ }
+</style>
+<div>
+  <h2>Hello, man! Embedded template here!<h2>
+  </div>
+""";
+
+}
+
 /**
  * A sample main
  */

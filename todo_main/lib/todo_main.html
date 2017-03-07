@@ -19,6 +19,7 @@
       }
 
     </style>
+    <test-comp></test-comp>
     <div class='head'>
 
     <paper-input class='inp0' label='new todo' value='{{newText}}'></paper-input>
@@ -30,11 +31,13 @@
     <paper-icon-button icon='icons:send' on-click='addTodo' disabled='[[!canAdd]]'></paper-icon-button>
   </div>
     <div>
+
       <dom-repeat id='rpt' items='[[todos]]' as='todo'>
         <template>
           <todo-renderer my-todo='[[todo]]' on-remove-me='removeIt'></todo-renderer>
         </template>
       </dom-repeat>
+
     </div>
   </template>
 </dom-module>
