@@ -1,0 +1,4 @@
+resolutions:
+ polymer: "2.0.0-rc.2"
+ webcomponentsjs: "v1.0.0-rc.5"
+# webcomponentsjs: "v1"
