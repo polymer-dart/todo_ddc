@@ -6,7 +6,7 @@ packages:
       name: html5
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.4"
+    version: "0.0.5"
   js:
     description:
       name: js
@@ -24,11 +24,11 @@ packages:
       name: polymer_element
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.2"
+    version: "0.6.0+1"
   polymer_elements:
     description:
-      ref: "v0.1.11"
-      resolved-ref: e2199d5645e8da1a8741832c629a67b965775113
+      ref: "v0.2.0"
+      resolved-ref: "7e0d233c9b59cfb5c458a1c3de6958f023697e3d"
       url: "https://github.com/dam0vm3nt/polymerize_elements.git"
     source: git
     version: "2.0.0-preview.1"
