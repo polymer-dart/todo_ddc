@@ -41,7 +41,7 @@ abstract class MyTestComp extends PolymerElement {
   PaperButton,
   TodoRenderer
 ])
-abstract class TodoMain extends PolymerElement implements MyReduxBehavior,MutableData {
+abstract class TodoMain extends PolymerElement implements MyReduxBehavior,MutableData,IronValidatableBehavior {
   String newText = "";
   @Property(statePath: 'todos')
   List<TodoDTO> todos = [];
