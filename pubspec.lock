@@ -29,7 +29,7 @@ packages:
     description:
       ref: "v0.2.0"
       resolved-ref: "7e0d233c9b59cfb5c458a1c3de6958f023697e3d"
-      url: "https://github.com/dam0vm3nt/polymerize_elements.git"
+      url: "https://github.com/polymer-dart/polymerize_elements.git"
     source: git
     version: "2.0.0-preview.1"
   todo_common:
