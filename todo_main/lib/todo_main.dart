@@ -11,21 +11,42 @@ import 'package:polymer_elements/paper_icon_button.dart';
 import 'package:polymer_elements/paper_button.dart';
 import 'package:polymer_elements/iron_validatable_behavior.dart';
 import 'package:js/js.dart';
+import 'package:js/js_util.dart';
+import 'package:polymer_element/super.dart';
+
+@PolymerBehavior("Sample.MyBehavior")
+abstract class MyBehavior  {
+  String myProp;
+
+  void ready() {
+    // We have to call super otherwise polymer will brake
+    // NOTE: this is true in JS true but they have a more natural way to do it
+    callSuper(this,'ready');
+    myProp='Hello from a behavior';
+  }
+
+  doSomething(Event ev, detail) {
+    myProp='And now has changed';
+  }
+}
 
 @PolymerRegister('test-comp')
-abstract class MyTestComp extends PolymerElement {
+abstract class MyTestComp extends PolymerElement implements MyBehavior {
   static String get template => """
 <style>
  :host {
     display: block;
-    color:red;
+ }
+
+ h2 {
+   color:red;
  }
 </style>
-<div>
-  <h2>Hello, man! Embedded template here!<h2>
+<div on-click='doSomething'>
+  <h2 >Hello, man! Embedded template here! </h2>
+  <div>This value comes from a dart behavior (click to changeit):  <b> [[myProp]]</b></div>
   </div>
 """;
-
 }
 
 /**
@@ -41,7 +62,8 @@ abstract class MyTestComp extends PolymerElement {
   PaperButton,
   TodoRenderer
 ])
-abstract class TodoMain extends PolymerElement implements MyReduxBehavior,MutableData,IronValidatableBehavior {
+abstract class TodoMain extends PolymerElement
+    implements MyReduxBehavior, MutableData, IronValidatableBehavior {
   String newText = "";
   @Property(statePath: 'todos')
   List<TodoDTO> todos = [];
