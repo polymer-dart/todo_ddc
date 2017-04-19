@@ -4,49 +4,42 @@ packages:
   html5:
     description:
       name: html5
-      url: "https://pub.dartlang.org"
+      url: "http://pub.drafintech.it:5001"
     source: hosted
     version: "0.0.5"
   js:
     description:
       name: js
-      url: "https://pub.dartlang.org"
+      url: "http://pub.drafintech.it:5001"
     source: hosted
     version: "0.6.1"
   logging:
     description:
       name: logging
-      url: "https://pub.dartlang.org"
+      url: "http://pub.drafintech.it:5001"
     source: hosted
     version: "0.11.3+1"
   polymer_element:
     description:
-      name: polymer_element
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "../../polymer_element"
+      relative: true
+    source: path
     version: "0.7.0"
   polymer_elements:
     description:
-      ref: "v0.2.3"
-      resolved-ref: "3fa9ca724eeb8b9e0358db09a9b068d3f4440401"
-      url: "https://github.com/polymer-dart/polymerize_elements.git"
-    source: git
-    version: "2.0.0-preview.1+1"
-  todo_common:
-    description:
-      path: todo_common
+      path: "../../polymer_elements"
       relative: true
     source: path
-    version: "0.0.1"
-  todo_main:
+    version: "2.0.0-preview.1"
+  todo_common:
     description:
-      path: todo_main
+      path: "../todo_common"
       relative: true
     source: path
     version: "0.0.1"
   todo_renderer:
     description:
-      path: todo_renderer
+      path: "../todo_renderer"
       relative: true
     source: path
     version: "0.0.1"

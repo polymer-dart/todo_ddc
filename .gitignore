@@ -1,1 +1,3 @@
-/home/vittorio/Develop/dart/todo_ddc/.gitignore
+packages
+.packages
+bazel-*

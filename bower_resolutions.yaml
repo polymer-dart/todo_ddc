@@ -1,1 +1,5 @@
-/home/vittorio/Develop/dart/todo_ddc/bower_resolutions.yaml
+resolutions:
+ polymer: "2.0.0-rc.6"
+ webcomponentsjs: "v1.0.0-rc.8"
+# polymer-redux: "polymer-dart/polymer-redux#polymer-2-collect-props"
+# webcomponentsjs: "v1"
