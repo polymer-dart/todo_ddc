@@ -1,7 +1,1 @@
-analyzer:
-  strong-mode: true
-#  language:
-#    enableConditionalDirectives: true
-  exclude:
-   - bazel-*/**
-   - WORKSPACE
+/home/vittorio/Develop/dart/todo_ddc/.analysis_options
