@@ -4,31 +4,31 @@ packages:
   html5:
     description:
       name: html5
-      url: "http://pub.drafintech.it:5001"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "0.0.5"
   js:
     description:
       name: js
-      url: "http://pub.drafintech.it:5001"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.1"
   logging:
     description:
       name: logging
-      url: "http://pub.drafintech.it:5001"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "0.11.3+1"
   polymer_element:
     description:
-      path: "/home/vittorio/Develop/dart/polymer_element"
-      relative: false
-    source: path
-    version: "0.7.0+1"
+      name: polymer_element
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0+rc.7"
   polymer_elements:
     description:
-      ref: "v0.2.3"
-      resolved-ref: "3fa9ca724eeb8b9e0358db09a9b068d3f4440401"
+      ref: "v0.2.4"
+      resolved-ref: "22da42cbb1838c2db08d4ec826c25b6df27c5057"
       url: "https://github.com/polymer-dart/polymerize_elements.git"
     source: git
     version: "2.0.0-preview.1+1"
