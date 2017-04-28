@@ -31,8 +31,7 @@
 
     </style>
     <div class='mat'>
-        <paper-checkbox checked='{{myTodo.status}}'></paper-checkbox>
-
+        <paper-checkbox checked='{{myTodo.status}}'></paper-checkbox>      
       <dom-if if='[[editing]]' on-dom-change='domChanged1'>
         <template >
           <div class='todoText' ><paper-input value='{{myTodo.text}}' on-blur='finishEdit'></paper-input></div>

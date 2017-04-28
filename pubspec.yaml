@@ -5,7 +5,7 @@ dependencies:
  logging: any
  todo_main:
    path: todo_main
- polymer_element: "^0.7.0"
+ polymer_element: "2.0.0+rc.7"
 
 # polymer_elements:
 #  git:

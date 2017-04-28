@@ -19,6 +19,12 @@ import 'package:polymer_elements/iron_meta.dart';
 abstract class MyBehavior  {
   String myProp;
 
+  // TODO : THIS STILL NOT WORKING
+  @Observe('myProp')
+  void checkObserveOnBehavior(_) {
+    print("My Prop has changed in a behavior :${myProp}");
+  }
+
   void ready() {
     // We have to call super otherwise polymer will brake
     // NOTE: this is true in JS true but they have a more natural way to do it

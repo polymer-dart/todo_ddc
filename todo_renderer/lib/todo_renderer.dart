@@ -26,8 +26,8 @@ import 'dart:async';
   PaperDialog])
 abstract class TodoRenderer extends PolymerElement implements MyReduxBehavior {
   TodoDTO myTodo;
-  bool editing = false;
-  bool askConfirm = false;
+  bool editing;
+  bool askConfirm;
 
   @Observe('askConfirm')
   void debugOpened(_) {
@@ -42,12 +42,17 @@ abstract class TodoRenderer extends PolymerElement implements MyReduxBehavior {
     editing = false;
   }
 
+  TodoRenderer() {
+    editing = false;
+    askConfirm= false;
+  }
+
   domChanged1(Event ev,details) {
 
     if (editing) {
       new Future((){
         PaperInput in0 = this.shadowRoot.querySelector("paper-input");
-
+      
         HTMLInputElement iee = in0.shadowRoot.querySelector('input');
         iee.setSelectionRange(0, myTodo.text.length);
         iee.focus();
