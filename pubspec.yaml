@@ -14,15 +14,18 @@ dependencies:
 # polymer_element: 
 #   path: ../polymer_element
 dependency_overrides:
-# polymer_element:
-#  path: /home/vittorio/Develop/dart/polymer_element
-# polymer_elements:
-#  path: /home/vittorio/Develop/dart/polymer_elements
-# html5:
-#  path: /home/vittorio/Develop/dart/html_lib
+ polymer_element:
+  path: /home/vittorio/Develop/dart/polymer_element
  polymer_elements:
-  git:
-    url: https://github.com/polymer-dart/polymerize_elements.git
-    ref: v0.2.4
+  path: /home/vittorio/Develop/dart/polymer_elements
+ html5:
+  path: /home/vittorio/Develop/dart/html_lib
+# polymer_elements:
+#  git:
+#    url: https://github.com/polymer-dart/polymerize_elements.git
+#    ref: v0.2.4
 # js:
 #  path: /home/vittorio/.pub-cache/hosted/pub.dartlang.org/js-0.6.1
+dev_dependencies:
+  polymerize:
+    path: /home/vittorio/Develop/dart/polymerize

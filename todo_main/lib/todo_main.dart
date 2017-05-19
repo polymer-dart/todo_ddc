@@ -81,6 +81,9 @@ abstract class TodoMain extends PolymerElement
   void checkLen(_) {
     canAdd = newText != null && newText.isNotEmpty;
   }
+  TodoMain() {
+    canAdd = false;
+  }
 
   @reduxActionFactory
   static ReduxAction<TodoDTO> addTodoAction(TodoDTO newTodo) =>

@@ -3,3 +3,4 @@ packages
 bazel-*
 BUILD
 WORKSPACE
+.polymerize
