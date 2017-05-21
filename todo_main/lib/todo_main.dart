@@ -83,6 +83,7 @@ abstract class TodoMain extends PolymerElement
   }
   TodoMain() {
     canAdd = false;
+    newText = "";
   }
 
   @reduxActionFactory
