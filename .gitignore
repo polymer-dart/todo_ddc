@@ -4,3 +4,4 @@ bazel-*
 BUILD
 WORKSPACE
 .polymerize
+.pub
