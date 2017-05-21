@@ -53,7 +53,7 @@ abstract class TodoRenderer extends PolymerElement implements MyReduxBehavior {
       new Future((){
         PaperInput in0 = this.shadowRoot.querySelector("paper-input");
       
-        HTMLInputElement iee = in0.shadowRoot.querySelector('input').shadowRoot.querySelector('input');
+        HTMLInputElement iee = in0.shadowRoot.querySelector('input');
         iee.setSelectionRange(0, myTodo.text.length);
         iee.focus();
       });

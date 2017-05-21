@@ -1,5 +1,6 @@
 resolutions:
  polymer: "^v2.0.0"
-# webcomponentsjs: "v1.0.0-rc.8"
+ webcomponentsjs: "v1.0.0"
+ "polymer-redux": "polymer-dart/polymer-redux#v2.0.0"
 # polymer-redux: "polymer-dart/polymer-redux#polymer-2-collect-props"
 # webcomponentsjs: "v1"

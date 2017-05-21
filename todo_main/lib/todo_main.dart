@@ -72,7 +72,7 @@ abstract class MyTestComp extends PolymerElement implements MyBehavior {
 ])
 abstract class TodoMain extends PolymerElement
     implements MyReduxBehavior, MutableData, IronValidatableBehavior {
-  String newText = "";
+  String newText;
   @Property(statePath: 'todos')
   List<TodoDTO> todos = [];
   bool canAdd = false;
@@ -83,7 +83,6 @@ abstract class TodoMain extends PolymerElement
   }
   TodoMain() {
     canAdd = false;
-    newText = "";
   }
 
   @reduxActionFactory
