@@ -220,10 +220,10 @@ packages:
     version: "2.0.0-preview.1+1"
   polymerize:
     description:
-      path: "/home/vittorio/Develop/dart/polymerize"
-      relative: false
-    source: path
-    version: "0.7.3"
+      name: polymerize
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "0.8.0"
   polymerize_common:
     description:
       name: polymerize_common
