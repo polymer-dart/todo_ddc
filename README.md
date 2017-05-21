@@ -6,10 +6,8 @@ how to use `polymerize` to build polymer-2 apps using Dart..
 ## How to build
 
  1. Install bazel (http://bazel.io)
- 1. Install polymerize (`pub global activate polymerize`)
  2. update deps with `pub get`
- 3. prepare for build with `polymerize init`
- 2. run `bazel build default`
+ 2. run `pub run polymerize:polymerize build`
 
 
 ## How to run the project
