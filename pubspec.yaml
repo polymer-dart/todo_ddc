@@ -23,9 +23,10 @@ dependency_overrides:
  polymer_elements:
   git:
     url: https://github.com/polymer-dart/polymerize_elements.git
-    ref: v0.3.1
+    ref: v0.3.2
 # js:
 #  path: /home/vittorio/.pub-cache/hosted/pub.dartlang.org/js-0.6.1
 dev_dependencies:
-  polymerize: ^0.8.1
+  polymerize: ^0.8.2
+#  polymerize:
 #    path: /home/vittorio/Develop/dart/polymerize
