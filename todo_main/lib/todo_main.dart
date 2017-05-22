@@ -64,28 +64,35 @@ abstract class MyTestComp extends PolymerElement implements MyBehavior {
 
 @PolymerRegister('todo-main', template: 'todo_main.html', uses: const [PaperInput, PaperIconButton, IronFlexLayout, IronIcons, IronIcon, PaperButton, TodoRenderer])
 abstract class TodoMain extends PolymerElement implements MyReduxBehavior, MutableData, IronValidatableBehavior {
-
-  String newText="xxx";
+  String newText;
   @Property(statePath: 'todos')
   List<TodoDTO> todos = [];
-  bool canAdd = false;
+
+  bool canAdd;
 
   @Observe('newText')
   void checkLen(_) {
-    canAdd = newText != null && newText.isNotEmpty;
+    set('canAdd', newText != null && newText.isNotEmpty);
+    print("New  text changed, can add : ${canAdd}");
   }
 
   connectedCallback() {
-    newText="ugo";
+    super.connectedCallback();
+    newText = "";
+  }
+
+/*
+  connectedCallback() {
+    newText="_";
     super.connectedCallback();
     () async {
       await new Future.delayed(new Duration(seconds: 0));
       newText="";
-      print("CIAO2");
+      print("Need to understand this better.");
     }();
 
   }
-
+*/
   @reduxActionFactory
   static ReduxAction<TodoDTO> addTodoAction(TodoDTO newTodo) => Actions.createAddTodoAction(newTodo);
 
