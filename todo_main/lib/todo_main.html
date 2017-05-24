@@ -36,7 +36,7 @@
 
       <dom-repeat id='rpt' items='[[todos]]' as='todo'>
         <template>
-          <todo-renderer my-todo='[[todo]]' on-remove-me='removeIt'></todo-renderer>
+          <todo-renderer my-todo='[[todo]]' on-remove-me='removeIt' on-my-todo-changed="aTodoChanged"></todo-renderer>
         </template>
       </dom-repeat>
 

@@ -41,6 +41,10 @@ List<TodoDTO> _reduceTodos(List<TodoDTO> todos, ReduxAction action) {
       return new List()
         ..addAll(todos ?? [])
         ..removeAt((action as ReduxAction<int>).detail);
+    case Actions.UPDATE_TODO:
+      return new List()
+          ..addAll(todos??[])
+          ..replaceRange(action.detail[1], action.detail[1]+1, [action.detail[0]]);
     default:
       return todos;
   }
@@ -73,12 +77,16 @@ class MyReduxBehavior extends ReduxBehavior {}
 class Actions {
   static const String ADD_TODO = 'ADD_TODO';
   static const String REMOVE_TODO = 'REMOVE_TODO';
+  static const String UPDATE_TODO = 'UPDATE_TODO';
 
   /**
    * Adds a todo to the list.
    */
   static ReduxAction<TodoDTO> createAddTodoAction(TodoDTO todo) =>
       new ReduxAction(type: ADD_TODO, detail: todo);
+
+  static ReduxAction createUpdateTodoAction(TodoDTO todo,int at) =>
+    new ReduxAction(type:UPDATE_TODO,detail:<dynamic>[todo,at]);
   /**
    * Removes a todo from the list
    */

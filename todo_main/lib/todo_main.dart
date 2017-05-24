@@ -58,6 +58,13 @@ abstract class MyTestComp extends PolymerElement implements MyBehavior {
 """;
 }
 
+class ClosureEventListener implements EventListener {
+  Function handler;
+  ClosureEventListener(this.handler);
+
+  void handleEvent(Event ev) => handler(ev);
+}
+
 /**
  * A sample main
  */
@@ -74,6 +81,19 @@ abstract class TodoMain extends PolymerElement implements MyReduxBehavior, Mutab
   void checkLen(_) {
     set('canAdd', newText != null && newText.isNotEmpty);
     print("New  text changed, can add : ${canAdd}");
+  }
+
+  TodoMain() {
+    addEventListener('todo-changed', new ClosureEventListener((Event evt) {
+      print("A todo changed (LISTENER):${evt}");
+      Redux.dispatch(this, 'todoChanged', [(evt as CustomEvent).detail['new'], rpt.indexForElement(evt.target)]);
+    }));
+  }
+
+  aTodoChanged(CustomEvent ev) {
+    int pos= rpt.indexForElement(ev.target);
+    print("TODO CHANGED  :${pos} , ${ev.detail}" );
+    Redux.dispatch(this, 'todoChanged', <dynamic>[ev.detail['new'], pos]);
   }
 
   connectedCallback() {
@@ -93,6 +113,10 @@ abstract class TodoMain extends PolymerElement implements MyReduxBehavior, Mutab
 
   }
 */
+
+  @reduxActionFactory
+  static ReduxAction todoChanged(TodoDTO newtodo, int at) => Actions.createUpdateTodoAction(newtodo, at);
+
   @reduxActionFactory
   static ReduxAction<TodoDTO> addTodoAction(TodoDTO newTodo) => Actions.createAddTodoAction(newTodo);
 
@@ -104,8 +128,9 @@ abstract class TodoMain extends PolymerElement implements MyReduxBehavior, Mutab
     newText = "";
   }
 
+  DomRepeat get rpt => shadowRoot.querySelector("#rpt");
+
   void removeIt(Event ev, TodoDTO todo) {
-    DomRepeat rpt = shadowRoot.querySelector("#rpt");
     int idx = rpt.indexForElement(ev.target);
     Redux.dispatch(this, 'removeTodoAction', [idx]);
   }

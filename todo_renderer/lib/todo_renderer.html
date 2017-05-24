@@ -31,16 +31,16 @@
 
     </style>
     <div class='mat'>
-        <paper-checkbox checked='{{myTodo.status}}'></paper-checkbox>      
+        <paper-checkbox id='statusCheckbox' checked='{{todo.status}}' on-change="statusChanged"></paper-checkbox>
       <dom-if if='[[editing]]' on-dom-change='domChanged1'>
         <template >
-          <div class='todoText' ><paper-input value='{{myTodo.text}}' on-blur='finishEdit'></paper-input></div>
+          <div class='todoText' ><paper-input id='textField' value='[[todo.text]]' on-blur='finishEdit' on-change="textChanged"></paper-input></div>
         </template>
       </dom-if>
 
       <dom-if if='[[!editing]]'>
         <template >
-          <div class='todoText'  is-done$='[[myTodo.status]]' on-click='startEdit'>[[myTodo.text]]</div>
+          <div class='todoText'  is-done$='[[todo.status]]' on-click='startEdit'>[[todo.text]]</div>
         </template>
       </dom-if>
 
