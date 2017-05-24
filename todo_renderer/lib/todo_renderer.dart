@@ -11,7 +11,7 @@ import 'package:polymer_elements/iron_icons.dart';
 import 'package:polymer_elements/paper_material.dart';
 import 'package:polymer_elements/paper_input.dart';
 import 'package:polymer_elements/iron_flex_layout.dart';
-import 'package:polymer_element/redux_local.dart' show ReduxLocalBehavior;
+import 'package:polymer_element/redux_local.dart' show ReduxAction, ReduxLocalBehavior, reduxActionFactory;
 
 import 'dart:async';
 

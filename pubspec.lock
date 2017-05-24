@@ -213,10 +213,9 @@ packages:
     version: "2.0.0+rc.11"
   polymer_elements:
     description:
-      ref: "v0.3.2"
-      resolved-ref: f66eb0bcbbb719f6de0c9335c269a41f7679da25
-      url: "https://github.com/polymer-dart/polymerize_elements.git"
-    source: git
+      path: "/home/vittorio/Develop/dart/polymer_elements"
+      relative: false
+    source: path
     version: "2.0.0-preview.1+1"
   polymerize:
     description:

@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:html5/html.dart';
+import 'package:polymer_element/dart_callbacks_behavior.dart';
+import 'package:polymer_element/redux_local.dart';
 import 'package:polymer_elements/iron_flex_layout.dart';
 import 'package:polymer_elements/iron_icon.dart';
 import 'package:polymer_elements/iron_icons.dart';
@@ -17,7 +19,7 @@ import 'package:polymer_element/super.dart';
 import 'package:polymer_elements/iron_meta.dart';
 
 @PolymerBehavior("Sample.MyBehavior")
-abstract class MyBehavior {
+abstract class MyBehavior implements DartCallbacksBehavior {
   String myProp;
 
   // TODO : THIS STILL NOT WORKING
@@ -26,12 +28,8 @@ abstract class MyBehavior {
     print("My Prop has changed in a behavior :${myProp}");
   }
 
-  void ready() {
-    // We have to call super otherwise polymer will brake
-    // NOTE: this is true in JS true but they have a more natural way to do it
-    callSuper(this, 'ready');
+  void readyPostHook() {
     myProp = 'Hello from a behavior';
-    //m.byKey('info')
   }
 
   doSomething(Event ev, detail) {
@@ -86,14 +84,14 @@ abstract class TodoMain extends PolymerElement implements MyReduxBehavior, Mutab
   TodoMain() {
     addEventListener('todo-changed', new ClosureEventListener((Event evt) {
       print("A todo changed (LISTENER):${evt}");
-      Redux.dispatch(this, 'todoChanged', [(evt as CustomEvent).detail['new'], rpt.indexForElement(evt.target)]);
+      dispatch(todoChanged((evt as CustomEvent).detail['new'], rpt.indexForElement(evt.target)));
     }));
   }
 
   aTodoChanged(CustomEvent ev) {
-    int pos= rpt.indexForElement(ev.target);
-    print("TODO CHANGED  :${pos} , ${ev.detail}" );
-    Redux.dispatch(this, 'todoChanged', <dynamic>[ev.detail['new'], pos]);
+    int pos = rpt.indexForElement(ev.target);
+    print("TODO CHANGED  :${pos} , ${ev.detail}");
+    dispatch(todoChanged(ev.detail['new'], pos));
   }
 
   connectedCallback() {
@@ -124,7 +122,7 @@ abstract class TodoMain extends PolymerElement implements MyReduxBehavior, Mutab
   static ReduxAction<int> removeTodoAction(int index) => Actions.createRemoveTodoAction(index);
 
   addTodo(Event ev, details) async {
-    Redux.dispatch(this, 'addTodoAction', [new TodoDTO(text: newText)]);
+    dispatch(addTodoAction(new TodoDTO(text: newText)));
     newText = "";
   }
 
@@ -132,6 +130,6 @@ abstract class TodoMain extends PolymerElement implements MyReduxBehavior, Mutab
 
   void removeIt(Event ev, TodoDTO todo) {
     int idx = rpt.indexForElement(ev.target);
-    Redux.dispatch(this, 'removeTodoAction', [idx]);
+    dispatch(removeTodoAction(idx));
   }
 }

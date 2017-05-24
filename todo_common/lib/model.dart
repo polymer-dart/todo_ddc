@@ -1,8 +1,11 @@
-@JS()
+@JS("TodoDDC")
 library model;
 
 import 'package:polymer_element/polymer_element.dart';
 import 'package:js/js.dart';
+import 'package:polymer_element/polymerize_js.dart';
+import 'package:polymer_element/redux_local.dart';
+import 'package:polymer_element/dart_callbacks_behavior.dart';
 
 int _id = 0;
 
@@ -50,10 +53,6 @@ List<TodoDTO> _reduceTodos(List<TodoDTO> todos, ReduxAction action) {
   }
 }
 
-/**
- * Store definition (needs a reducer function)
- */
-const StoreDef myStore = const StoreDef(myReducer);
 
 /**
  * My generic state
@@ -65,11 +64,18 @@ class MyState {
   MyState({this.todos: const []});
 }
 
+final globalStore = createStore(myReducer);
+
 /**
- * Redux behavior associated to store `myStore`
+ * Redux behavior associated to store `myStore`.
+ * Implemented with a canonical behavior.
  */
-@myStore
-class MyReduxBehavior extends ReduxBehavior {}
+@PolymerBehavior("MyReduxBehavior")
+abstract class MyReduxBehavior implements ReduxLocalBehavior, DartCallbacksBehavior {
+  readyPostHook() {
+    store = globalStore;
+  }
+}
 
 /**
  * Utility class with action factories.
