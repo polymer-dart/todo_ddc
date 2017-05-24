@@ -1,45 +1,97 @@
 <dom-module id='todo-main'>
-  <template>
-    <style>
-      .head {
-        @apply --layout-horizontal;
-      }
+    <template>
+        <style>
+            .head {
+                @apply --layout-horizontal;
+            }
 
-      .inp {
-        @apply --layout-flex;
-        @apply --layout-horizontal;
-      }
+            .inp {
+                @apply --layout-flex;
+                @apply --layout-horizontal;
+            }
 
-      .inp > input {
-        @apply --layout-flex;
-      }
+            .inp > input {
+                @apply --layout-flex;
+            }
 
-      .inp0 {
-        @apply --layout-flex;
-      }
+            .inp0 {
+                @apply --layout-flex;
+            }
 
-    </style>
-    <iron-meta key="info" value="foo/bar"></iron-meta>
+            app-header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 212px;
+                color: #fff;
+                --app-header-background-front-layer: {
+                    background-color: #5064cd;
+                };
+                --app-header-background-rear-layer: {
+                    background-color: #77f2ff;
+                };
+            }
 
-    <test-comp></test-comp>
-    <div class='head'>
+            .content {
+                padding: 1em;
+                padding-top: 212px;
+            }
 
-    <paper-input class='inp0' label='new todo' value='{{newText}}'></paper-input>
-    <!--
-      <iron-input class='inp' bind-value='{{newText}}'>
-        <input type='text' placeholder="new todo">
-      </iron-input>
--->
-    <paper-icon-button icon='icons:send' on-click='addTodo' disabled='[[!canAdd]]'></paper-icon-button>
-  </div>
-    <div>
+            [main-title] {
+                font-weight: lighter;
+                margin-left: 108px;
+            }
+            [condensed-title] {
+                font-weight: lighter;
+                margin-left: 30px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            [condensed-title] i {
+                font-weight: 100;
+                font-style: normal;
+            }
 
-      <dom-repeat id='rpt' items='[[todos]]' as='todo'>
-        <template>
-          <todo-renderer my-todo='[[todo]]' on-remove-me='removeIt' on-my-todo-changed="aTodoChanged"></todo-renderer>
-        </template>
-      </dom-repeat>
 
-    </div>
-  </template>
+        </style>
+        <iron-meta key="info" value="foo/bar"></iron-meta>
+        <app-localstorage-document key="jsonData" data="{{jsonData}}" log></app-localstorage-document>
+        <app-header-layout fullbleed>
+
+            <app-header  condenses reveals effects="waterfall resize-title blend-background parallax-background">
+                <app-toolbar>
+                    <iron-icon src="images/logo.png"></iron-icon>
+                    <h4 condensed-title>TODO DDC  DEMO  by Polymerize</h4>
+                </app-toolbar>
+                <app-toolbar class="tall">
+                    <h1 main-title>TODO DDC DEMO</h1>
+                </app-toolbar>
+            </app-header>
+            <div class="content">
+                <test-comp></test-comp>
+                <div class='head'>
+
+                    <paper-input class='inp0' label='new todo' value='{{newText}}'></paper-input>
+                    <!--
+                      <iron-input class='inp' bind-value='{{newText}}'>
+                        <input type='text' placeholder="new todo">
+                      </iron-input>
+                -->
+                    <paper-icon-button icon='icons:send' on-click='addTodo' disabled='[[!canAdd]]'></paper-icon-button>
+                </div>
+                <div>
+
+                    <dom-repeat id='rpt' items='[[todos]]' as='todo'>
+                        <template>
+                            <todo-renderer my-todo='[[todo]]' on-remove-me='removeIt'
+                                           on-my-todo-changed="aTodoChanged"></todo-renderer>
+                        </template>
+                    </dom-repeat>
+
+                </div>
+            </div>
+        </app-header-layout>
+
+    </template>
 </dom-module>

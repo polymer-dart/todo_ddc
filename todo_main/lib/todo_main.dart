@@ -7,7 +7,6 @@ import 'package:polymer_elements/iron_icon.dart';
 import 'package:polymer_elements/iron_icons.dart';
 import 'package:polymer_element/polymer_element.dart';
 import 'package:todo_common/model.dart';
-import 'package:polymer_element/observe.dart' as observe;
 import 'package:todo_renderer/todo_renderer.dart';
 import 'package:polymer_elements/paper_input.dart';
 import 'package:polymer_elements/paper_icon_button.dart';
@@ -17,6 +16,11 @@ import 'package:js/js.dart';
 import 'package:js/js_util.dart';
 import 'package:polymer_element/super.dart';
 import 'package:polymer_elements/iron_meta.dart';
+import 'package:polymer_elements/app_localstorage_document.dart';
+import 'package:polymer_elements/app_header_layout.dart';
+import 'package:polymer_elements/app_header.dart';
+import 'package:polymer_elements/app_toolbar.dart';
+import 'package:polymer_elements/app_scroll_effects.dart';
 
 @PolymerBehavior("Sample.MyBehavior")
 abstract class MyBehavior implements DartCallbacksBehavior {
@@ -74,6 +78,17 @@ abstract class TodoMain extends PolymerElement implements MyReduxBehavior, Mutab
   List<TodoDTO> todos = [];
 
   bool canAdd;
+
+  @Property(statePath:'jsonData')
+  String jsonData;
+
+  @Observe('jsonData')
+  void restoreJson() {
+    if (jsonData!=null) {
+      print("DISPATCHING RESTORE DATA FOR ${jsonData}");
+      dispatch(new ReduxAction<String>(type: 'RESTORE_DATA', detail: jsonData));
+    }
+  }
 
   @Observe('newText')
   void checkLen(_) {

@@ -1,1 +1,1 @@
-#build --strategy=Polymerize=worker
+build --strategy=Polymerize=worker

@@ -1,0 +1,1 @@
+importScripts('external/bower/assets/platinum-sw/service-worker.js');

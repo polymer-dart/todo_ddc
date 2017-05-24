@@ -4,4 +4,6 @@ version: 0.0.1
 dependencies:
  logging: any
  polymer_element: any
+ built_collection: "^1.4.0"
+
 #   path: ../../polymer_element

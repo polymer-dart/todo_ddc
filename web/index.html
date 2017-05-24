@@ -1,13 +1,28 @@
 <html>
 <head>
+    <!--
     <script src="external/bower/assets/webcomponentsjs/webcomponents-loader.js"></script>
+    -->
+    <script src="external/bower/assets/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel='import' href='imd.html'>
     <!-- load main component -->
     <link rel='import' href="index.mod.html">
-</head>
-<body>
+    <style>
 
-  <todo-main></todo-main>
+
+        body {
+            background-color: beige;
+        }
+    </style>
+</head>
+<body fullbleed>
+<platinum-sw-register id="reg" skip-waiting
+                      clients-claim
+                      reload-on-install>
+    <platinum-sw-cache default-cache-strategy="networkFirst"></platinum-sw-cache>
+</platinum-sw-register>
+
+<todo-main></todo-main>
 
 </body>
 </html>

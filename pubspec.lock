@@ -31,6 +31,12 @@ packages:
       url: "http://pub.drafintech.it:5001"
     source: hosted
     version: "0.1.4"
+  built_collection:
+    description:
+      name: built_collection
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "1.4.0"
   charcode:
     description:
       name: charcode
@@ -213,8 +219,8 @@ packages:
     version: "2.0.0+rc.12"
   polymer_elements:
     description:
-      ref: "v0.3.3"
-      resolved-ref: e428edcd8304884091c7bd1a4131cb3bc8b252f7
+      ref: "v0.3.4"
+      resolved-ref: b7305d2889adb93755626df07a02ebc98e36966b
       url: "https://github.com/polymer-dart/polymerize_elements.git"
     source: git
     version: "2.0.0-preview.1+1"
@@ -236,6 +242,12 @@ packages:
       url: "http://pub.drafintech.it:5001"
     source: hosted
     version: "0.5.4"
+  quiver:
+    description:
+      name: quiver
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "0.25.0"
   resource:
     description:
       name: resource
