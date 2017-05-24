@@ -207,22 +207,23 @@ packages:
     version: "0.2.0"
   polymer_element:
     description:
-      path: "/home/vittorio/Develop/dart/polymer_element"
-      relative: false
-    source: path
-    version: "2.0.0+rc.11"
+      name: polymer_element
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "2.0.0+rc.12"
   polymer_elements:
     description:
-      path: "/home/vittorio/Develop/dart/polymer_elements"
-      relative: false
-    source: path
+      ref: "v0.3.3"
+      resolved-ref: e428edcd8304884091c7bd1a4131cb3bc8b252f7
+      url: "https://github.com/polymer-dart/polymerize_elements.git"
+    source: git
     version: "2.0.0-preview.1+1"
   polymerize:
     description:
-      path: "/home/vittorio/Develop/dart/polymerize"
-      relative: false
-    source: path
-    version: "0.8.3"
+      name: polymerize
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "0.8.4"
   polymerize_common:
     description:
       name: polymerize_common
