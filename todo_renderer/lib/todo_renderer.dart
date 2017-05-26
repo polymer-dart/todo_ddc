@@ -81,16 +81,12 @@ abstract class TodoRenderer extends PolymerElement implements ReduxLocalBehavior
     print("Dialog open state has changed!");
   }
 
-  @reduxActionFactory
   static ReduxAction<TodoDTO> initState(TodoDTO newText) => new ReduxAction<TodoDTO>(type: 'INIT_STATE', detail: newText);
 
-  @reduxActionFactory
   static ReduxAction<String> updateTodoText(String newText) => new ReduxAction<String>(type: 'UPDATE_TODO_TEXT', detail: newText);
 
-  @reduxActionFactory
   static ReduxAction<bool> updateTodoStatus(bool newStatus) => new ReduxAction<bool>(type: 'UPDATE_TODO_STATUS', detail: newStatus);
 
-  @reduxActionFactory
   static ReduxAction<bool> changeEditing(bool editing) => new ReduxAction<bool>(type: 'UPDATE_EDITING', detail: editing);
 
   startEdit(Event ev, details) => dispatch(changeEditing(true));

@@ -70,6 +70,14 @@
             </app-header>
             <div class="content">
                 <test-comp></test-comp>
+
+                <paper-input label="nested prop edit" value="{{newNestedValue}}"></paper-input>
+
+                <div>
+                    Nested prop is : <paper-input value="[[myObservedObject.myNestedProperty]]" label="nestedProp" readonly></paper-input>
+                </div>
+
+
                 <div class='head'>
 
                     <paper-input class='inp0' label='new todo' value='{{newText}}'></paper-input>

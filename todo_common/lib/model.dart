@@ -1,6 +1,3 @@
-@JS("TodoDDC")
-library model;
-
 import 'dart:convert';
 import 'package:polymer_element/polymer_element.dart';
 import 'package:js/js.dart';
@@ -96,7 +93,7 @@ final globalStore = createStore(myReducer);
  * Redux behavior associated to store `myStore`.
  * Implemented with a canonical behavior.
  */
-@PolymerBehavior("MyReduxBehavior")
+@PolymerBehavior("TodoDDC.MyReduxBehavior")
 abstract class MyReduxBehavior implements ReduxLocalBehavior, DartCallbacksBehavior {
   readyPostHook() {
     store = globalStore;

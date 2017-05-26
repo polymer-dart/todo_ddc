@@ -21,6 +21,7 @@ import 'package:polymer_elements/app_header_layout.dart';
 import 'package:polymer_elements/app_header.dart';
 import 'package:polymer_elements/app_toolbar.dart';
 import 'package:polymer_elements/app_scroll_effects.dart';
+import 'package:polymer_element/observe.dart';
 
 @PolymerBehavior("Sample.MyBehavior")
 abstract class MyBehavior implements DartCallbacksBehavior {
@@ -60,11 +61,9 @@ abstract class MyTestComp extends PolymerElement implements MyBehavior {
 """;
 }
 
-class ClosureEventListener implements EventListener {
-  Function handler;
-  ClosureEventListener(this.handler);
 
-  void handleEvent(Event ev) => handler(ev);
+class MyObservedObject {
+  String myNestedProperty;
 }
 
 /**
@@ -72,12 +71,23 @@ class ClosureEventListener implements EventListener {
  */
 
 @PolymerRegister('todo-main', template: 'todo_main.html', uses: const [PaperInput, PaperIconButton, IronFlexLayout, IronIcons, IronIcon, PaperButton, TodoRenderer])
-abstract class TodoMain extends PolymerElement implements MyReduxBehavior, MutableData, IronValidatableBehavior {
+abstract class TodoMain extends PolymerElement implements MyReduxBehavior, MutableData, IronValidatableBehavior, AutonotifyBehavior {
   String newText;
   @Property(statePath: 'todos')
   List<TodoDTO> todos = [];
 
   bool canAdd;
+
+  MyObservedObject myObservedObject;
+
+  String newNestedValue;
+
+  @Observe('newNestedValue')
+  void updateNestedValue(_) {
+    // Note this normally won't trigger a notify (it's a nested prop).
+    // But 'AutonotifyBehavior' will make it happen...
+    myObservedObject.myNestedProperty = newNestedValue;
+  }
 
   @Property(statePath:'jsonData')
   String jsonData;
@@ -97,10 +107,6 @@ abstract class TodoMain extends PolymerElement implements MyReduxBehavior, Mutab
   }
 
   TodoMain() {
-    addEventListener('todo-changed', new ClosureEventListener((Event evt) {
-      print("A todo changed (LISTENER):${evt}");
-      dispatch(todoChanged((evt as CustomEvent).detail['new'], rpt.indexForElement(evt.target)));
-    }));
   }
 
   aTodoChanged(CustomEvent ev) {
@@ -112,28 +118,13 @@ abstract class TodoMain extends PolymerElement implements MyReduxBehavior, Mutab
   connectedCallback() {
     super.connectedCallback();
     newText = "";
+    myObservedObject = new MyObservedObject();
   }
 
-/*
-  connectedCallback() {
-    newText="_";
-    super.connectedCallback();
-    () async {
-      await new Future.delayed(new Duration(seconds: 0));
-      newText="";
-      print("Need to understand this better.");
-    }();
-
-  }
-*/
-
-  @reduxActionFactory
   static ReduxAction todoChanged(TodoDTO newtodo, int at) => Actions.createUpdateTodoAction(newtodo, at);
 
-  @reduxActionFactory
   static ReduxAction<TodoDTO> addTodoAction(TodoDTO newTodo) => Actions.createAddTodoAction(newTodo);
 
-  @reduxActionFactory
   static ReduxAction<int> removeTodoAction(int index) => Actions.createRemoveTodoAction(index);
 
   addTodo(Event ev, details) async {
