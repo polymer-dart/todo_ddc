@@ -64,6 +64,7 @@ abstract class MyTestComp extends PolymerElement implements MyBehavior {
 
 class MyObservedObject {
   String myNestedProperty;
+  MyObservedObject mySubNestedProperty;
 }
 
 /**
@@ -87,6 +88,7 @@ abstract class TodoMain extends PolymerElement implements MyReduxBehavior, Mutab
     // Note this normally won't trigger a notify (it's a nested prop).
     // But 'AutonotifyBehavior' will make it happen...
     myObservedObject.myNestedProperty = newNestedValue;
+    myObservedObject.mySubNestedProperty.myNestedProperty = newNestedValue;
   }
 
   @Property(statePath:'jsonData')
@@ -118,7 +120,8 @@ abstract class TodoMain extends PolymerElement implements MyReduxBehavior, Mutab
   connectedCallback() {
     super.connectedCallback();
     newText = "";
-    myObservedObject = new MyObservedObject();
+    myObservedObject = new MyObservedObject()
+      ..mySubNestedProperty = new MyObservedObject();
   }
 
   static ReduxAction todoChanged(TodoDTO newtodo, int at) => Actions.createUpdateTodoAction(newtodo, at);
