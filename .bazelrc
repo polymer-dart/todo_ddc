@@ -1,1 +1,1 @@
-build --strategy=Polymerize=worker
+build --worker_max_instances=1 --strategy=Polymerize=worker
