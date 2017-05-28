@@ -5,7 +5,7 @@ dependencies:
  logging: any
  todo_main:
    path: todo_main
- polymer_element: "2.0.0+rc.12"
+ polymer_element: "2.0.0+rc.13"
 
 # polymer_elements:
 #  git:
@@ -14,8 +14,8 @@ dependencies:
 # polymer_element: 
 #   path: ../polymer_element
 dependency_overrides:
- polymer_element:
-  path: /home/vittorio/Develop/dart/polymer_element
+# polymer_element:
+#  path: /home/vittorio/Develop/dart/polymer_element
 # polymer_elements:
 #  path: /home/vittorio/Develop/dart/polymer_elements
 # html5:
@@ -27,6 +27,6 @@ dependency_overrides:
 # js:
 #  path: /home/vittorio/.pub-cache/hosted/pub.dartlang.org/js-0.6.1
 dev_dependencies:
-#  polymerize: ^0.8.4
-  polymerize:
-    path: /home/vittorio/Develop/dart/polymerize
+  polymerize: ^0.8.5
+#  polymerize:
+#    path: /home/vittorio/Develop/dart/polymerize
