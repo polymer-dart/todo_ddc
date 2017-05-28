@@ -1,6 +1,6 @@
 <dom-module id="todo-list">
     <template>
-        <paper-input label="nested prop edit" value="{{newNestedValue}}"></paper-input>
+        <paper-input label="nested prop edit" value="{{newNestedValue}}" ></paper-input>
 
         <div>
             Nested props are :
@@ -15,5 +15,6 @@
                 </template>
             </dom-repeat>
         </div>
+        <paper-button on-click="reset">Reset</paper-button>
     </template>
 </dom-module>

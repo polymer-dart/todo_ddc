@@ -43,5 +43,10 @@ abstract class TodoList extends PolymerElement implements AutonotifyBehavior {
       ..mySubNestedProperty = new MyObservedObject();
   }
 
+  void reset(_) {
+    myObservedObject.mySubNestedProperty = new MyObservedObject()
+          ..myNestedProperty="RESETTED";
+  }
+
 
 }
