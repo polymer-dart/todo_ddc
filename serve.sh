@@ -1,0 +1,1 @@
+( cd bazel-bin ; serve )
