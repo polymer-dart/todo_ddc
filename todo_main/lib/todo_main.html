@@ -71,15 +71,6 @@
             <div class="content">
                 <test-comp></test-comp>
 
-                <paper-input label="nested prop edit" value="{{newNestedValue}}"></paper-input>
-
-                <div>
-                    Nested props are :
-                    <paper-input value="[[myObservedObject.myNestedProperty]]" label="first level" readonly></paper-input>
-                    <paper-input value="[[myObservedObject.mySubNestedProperty.myNestedProperty]]" label="second level" readonly></paper-input>
-                </div>
-
-
                 <div class='head'>
 
                     <paper-input class='inp0' label='new todo' value='{{newText}}'></paper-input>
@@ -89,8 +80,11 @@
                       </iron-input>
                 -->
                     <paper-icon-button icon='icons:send' on-click='addTodo' disabled='[[!canAdd]]'></paper-icon-button>
+
+
                 </div>
                 <div>
+                    <todo-list todos="[[todos2]]"></todo-list>
 
                     <dom-repeat id='rpt' items='[[todos]]' as='todo'>
                         <template>

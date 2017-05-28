@@ -22,6 +22,7 @@ import 'package:polymer_elements/app_header.dart';
 import 'package:polymer_elements/app_toolbar.dart';
 import 'package:polymer_elements/app_scroll_effects.dart';
 import 'package:polymer_element/observe.dart';
+import 'todo_list.dart';
 
 @PolymerBehavior("Sample.MyBehavior")
 abstract class MyBehavior implements DartCallbacksBehavior {
@@ -62,34 +63,19 @@ abstract class MyTestComp extends PolymerElement implements MyBehavior {
 }
 
 
-class MyObservedObject {
-  String myNestedProperty;
-  MyObservedObject mySubNestedProperty;
-}
-
 /**
  * A sample main
  */
 
 @PolymerRegister('todo-main', template: 'todo_main.html', uses: const [PaperInput, PaperIconButton, IronFlexLayout, IronIcons, IronIcon, PaperButton, TodoRenderer])
-abstract class TodoMain extends PolymerElement implements MyReduxBehavior, MutableData, IronValidatableBehavior, AutonotifyBehavior {
+abstract class TodoMain extends PolymerElement implements MyReduxBehavior, MutableData, IronValidatableBehavior {
   String newText;
   @Property(statePath: 'todos')
   List<TodoDTO> todos = [];
 
+  List<TodoDTO> todos2;
+
   bool canAdd;
-
-  MyObservedObject myObservedObject;
-
-  String newNestedValue;
-
-  @Observe('newNestedValue')
-  void updateNestedValue(_) {
-    // Note this normally won't trigger a notify (it's a nested prop).
-    // But 'AutonotifyBehavior' will make it happen...
-    myObservedObject.myNestedProperty = newNestedValue;
-    myObservedObject.mySubNestedProperty.myNestedProperty = newNestedValue;
-  }
 
   @Property(statePath:'jsonData')
   String jsonData;
@@ -120,8 +106,7 @@ abstract class TodoMain extends PolymerElement implements MyReduxBehavior, Mutab
   connectedCallback() {
     super.connectedCallback();
     newText = "";
-    myObservedObject = new MyObservedObject()
-      ..mySubNestedProperty = new MyObservedObject();
+    todos2 = observeSupport.makeObservable([]);
   }
 
   static ReduxAction todoChanged(TodoDTO newtodo, int at) => Actions.createUpdateTodoAction(newtodo, at);
@@ -132,6 +117,7 @@ abstract class TodoMain extends PolymerElement implements MyReduxBehavior, Mutab
 
   addTodo(Event ev, details) async {
     dispatch(addTodoAction(new TodoDTO(text: newText)));
+    todos2.add(new TodoDTO(text:newText));
     newText = "";
   }
 

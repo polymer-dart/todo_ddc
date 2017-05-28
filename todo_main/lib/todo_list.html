@@ -1,0 +1,19 @@
+<dom-module id="todo-list">
+    <template>
+        <paper-input label="nested prop edit" value="{{newNestedValue}}"></paper-input>
+
+        <div>
+            Nested props are :
+            <paper-input value="[[myObservedObject.myNestedProperty]]" label="first level" readonly></paper-input>
+            <paper-input value="[[myObservedObject.mySubNestedProperty.myNestedProperty]]" label="second level"
+                         readonly></paper-input>
+        </div>
+        <div>
+            <dom-repeat id="rpt" items="[[todos]]">
+                <template>
+                    <div> This is an item : '[[item.text]]' <paper-button on-click="removeMe">remove</paper-button></div>
+                </template>
+            </dom-repeat>
+        </div>
+    </template>
+</dom-module>
