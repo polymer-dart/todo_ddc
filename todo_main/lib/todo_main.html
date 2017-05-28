@@ -42,57 +42,67 @@
                 font-weight: lighter;
                 margin-left: 108px;
             }
+
             [condensed-title] {
                 font-weight: lighter;
                 margin-left: 30px;
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
+
             [condensed-title] i {
                 font-weight: 100;
                 font-style: normal;
             }
 
+            .case {
+                border: 1px solid black;
+                padding: 0.5em;
+                margin: 0.5em;
+            }
 
         </style>
         <iron-meta key="info" value="foo/bar"></iron-meta>
         <app-localstorage-document key="jsonData" data="{{jsonData}}" log></app-localstorage-document>
         <app-header-layout fullbleed>
 
-            <app-header  condenses reveals effects="waterfall resize-title blend-background parallax-background">
+            <app-header condenses reveals effects="waterfall resize-title blend-background parallax-background">
                 <app-toolbar>
                     <iron-icon src="images/logo.png"></iron-icon>
-                    <h4 condensed-title>TODO DDC  DEMO  by Polymerize</h4>
+                    <h4 condensed-title>TODO DDC DEMO by Polymerize</h4>
                 </app-toolbar>
                 <app-toolbar class="tall">
                     <h1 main-title>TODO DDC DEMO</h1>
                 </app-toolbar>
             </app-header>
             <div class="content">
-                <test-comp></test-comp>
+                <test-comp class="case"></test-comp>
+                <todo-list class="case" todos="[[todos2]]"></todo-list>
+                <div class="case">
+                    <div class='head'>
 
-                <div class='head'>
+                        <paper-input class='inp0' label='new todo' value='{{newText}}'></paper-input>
+                        <!--
+                          <iron-input class='inp' bind-value='{{newText}}'>
+                            <input type='text' placeholder="new todo">
+                          </iron-input>
+                    -->
+                        <paper-icon-button icon='icons:send' on-click='addTodo'
+                                           disabled='[[!canAdd]]'></paper-icon-button>
 
-                    <paper-input class='inp0' label='new todo' value='{{newText}}'></paper-input>
-                    <!--
-                      <iron-input class='inp' bind-value='{{newText}}'>
-                        <input type='text' placeholder="new todo">
-                      </iron-input>
-                -->
-                    <paper-icon-button icon='icons:send' on-click='addTodo' disabled='[[!canAdd]]'></paper-icon-button>
+
+                    </div>
+                    <div>
 
 
-                </div>
-                <div>
-                    <todo-list todos="[[todos2]]"></todo-list>
+                        <dom-repeat id='rpt' items='[[todos]]' as='todo'>
+                            <template>
+                                <todo-renderer my-todo='[[todo]]' on-remove-me='removeIt'
+                                               on-my-todo-changed="aTodoChanged"></todo-renderer>
+                            </template>
+                        </dom-repeat>
 
-                    <dom-repeat id='rpt' items='[[todos]]' as='todo'>
-                        <template>
-                            <todo-renderer my-todo='[[todo]]' on-remove-me='removeIt'
-                                           on-my-todo-changed="aTodoChanged"></todo-renderer>
-                        </template>
-                    </dom-repeat>
-
+                    </div>
                 </div>
             </div>
         </app-header-layout>

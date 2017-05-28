@@ -1,6 +1,11 @@
 <dom-module id="todo-list">
     <template>
-        <paper-input label="nested prop edit" value="{{newNestedValue}}" ></paper-input>
+        <style>
+            :host {
+                display: block;
+            }
+        </style>
+        <paper-input label="nested prop edit" value="{{newNestedValue}}"></paper-input>
 
         <div>
             Nested props are :
@@ -11,7 +16,9 @@
         <div>
             <dom-repeat id="rpt" items="[[todos]]">
                 <template>
-                    <div> This is an item : '[[item.text]]' <paper-button on-click="removeMe">remove</paper-button></div>
+                    <div> This is an item : '[[item.text]]'
+                        <paper-button on-click="removeMe">remove</paper-button>
+                    </div>
                 </template>
             </dom-repeat>
         </div>
