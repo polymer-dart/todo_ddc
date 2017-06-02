@@ -14,8 +14,8 @@ dependencies:
 # polymer_element: 
 #   path: ../polymer_element
 dependency_overrides:
-# polymer_element:
-#  path: /home/vittorio/Develop/dart/polymer_element
+ polymer_element:
+  path: /home/vittorio/Develop/dart/polymer_element
 # polymer_elements:
 #  path: /home/vittorio/Develop/dart/polymer_elements
 # html5:
