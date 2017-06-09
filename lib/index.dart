@@ -14,6 +14,5 @@ main() {
 }
 
 index() {
- print("TODOMAIN:${TodoMain}");
-
+ print("INDEX");
 }
