@@ -8,6 +8,7 @@ import 'package:polymer_elements/paper_button.dart';
 
 class MyObservedObject {
   String myNestedProperty;
+  // Recursive declarations are handled nicely (unless there's a recursive graph, that's impossible to notify correctly)
   MyObservedObject mySubNestedProperty;
 }
 
@@ -15,8 +16,6 @@ class MyObservedObject {
 @PolymerRegister('todo-list',template: 'todo_list.html')
 abstract class TodoList extends PolymerElement implements AutonotifyBehavior {
   List<TodoDTO> todos;
-
-
   MyObservedObject myObservedObject;
 
   String newNestedValue;
@@ -25,6 +24,7 @@ abstract class TodoList extends PolymerElement implements AutonotifyBehavior {
 
   void removeMe(CustomEvent ev) {
     int p  = rpt.indexForElement(ev.target);
+    // Note : this would normally require to use list accessor polymer apis, unless using autonotify.
     todos.removeAt(p);
   }
 
@@ -33,6 +33,7 @@ abstract class TodoList extends PolymerElement implements AutonotifyBehavior {
     // Note this normally won't trigger a notify (it's a nested prop).
     // But 'AutonotifyBehavior' will make it happen...
     myObservedObject.myNestedProperty = newNestedValue;
+    // Even more these one :
     myObservedObject.mySubNestedProperty.myNestedProperty = newNestedValue;
   }
 
