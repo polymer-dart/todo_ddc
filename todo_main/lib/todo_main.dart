@@ -24,6 +24,7 @@ import 'package:polymer_elements/app_scroll_effects.dart';
 import 'package:polymer_element/observe.dart';
 import 'todo_list.dart';
 
+
 @PolymerBehavior("Sample.MyBehavior")
 abstract class MyBehavior implements DartCallbacksBehavior {
   String myProp;
@@ -67,7 +68,7 @@ abstract class MyTestComp extends PolymerElement implements MyBehavior {
  * A sample main
  */
 
-@PolymerRegister('todo-main', template: 'todo_main.html', uses: const [PaperInput, PaperIconButton, IronFlexLayout, IronIcons, IronIcon, PaperButton, TodoRenderer])
+@PolymerRegister('todo-main', template: 'todo_main.html')
 abstract class TodoMain extends PolymerElement implements MyReduxBehavior, MutableData, IronValidatableBehavior {
   String newText;
   @Property(statePath: 'todos')
