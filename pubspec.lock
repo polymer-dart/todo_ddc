@@ -226,10 +226,10 @@ packages:
     version: "2.0.0-preview.1+1"
   polymerize:
     description:
-      name: polymerize
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.8.5"
+      path: "/home/vittorio/Develop/dart/x/polymerize"
+      relative: false
+    source: path
+    version: "0.8.6"
   polymerize_common:
     description:
       name: polymerize_common

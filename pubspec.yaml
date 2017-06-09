@@ -27,6 +27,6 @@ dependency_overrides:
 # js:
 #  path: /home/vittorio/.pub-cache/hosted/pub.dartlang.org/js-0.6.1
 dev_dependencies:
-  polymerize: ^0.8.5
+  polymerize: ^0.8.6
 #  polymerize:
-#    path: /home/vittorio/Develop/dart/polymerize
+#    path: /home/vittorio/Develop/dart/x/polymerize
