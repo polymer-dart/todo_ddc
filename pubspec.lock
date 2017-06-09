@@ -78,7 +78,7 @@ packages:
       name: csslib
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.7+1"
+    version: "0.14.0"
   dart_style:
     description:
       name: dart_style
@@ -120,7 +120,7 @@ packages:
       name: html
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.1"
+    version: "0.13.2"
   html5:
     description:
       name: html5
@@ -204,7 +204,7 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.1"
+    version: "1.4.2"
   plugin:
     description:
       name: plugin
@@ -226,10 +226,10 @@ packages:
     version: "2.0.0-preview.1+1"
   polymerize:
     description:
-      path: "/home/vittorio/Develop/dart/x/polymerize"
-      relative: false
-    source: path
-    version: "0.8.6"
+      name: polymerize
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.8.6+1"
   polymerize_common:
     description:
       name: polymerize_common
