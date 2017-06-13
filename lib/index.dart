@@ -10,9 +10,10 @@ import 'package:polymer_elements/iron_flex_layout.dart';
 @init
 main() {
  print("hello here we are!!");
- (window.document.querySelector('#reg') as PlatinumSwRegister).register();
 }
 
 index() {
  print("INDEX");
+ PlatinumSwRegister reg = window.document.querySelector('#reg');
+ reg.register();
 }
