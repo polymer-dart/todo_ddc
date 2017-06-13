@@ -6,7 +6,7 @@ dependencies:
  todo_main:
    path: todo_main
  polymer_element: "^2.0.2"
- polymerize: ^0.9.0
+ polymerize: ^0.9.0+1
 
 # polymer_elements:
 #  git:
@@ -36,10 +36,10 @@ dependency_overrides:
     ref: v0.4.0
 # js:
 #  path: /home/vittorio/.pub-cache/hosted/pub.dartlang.org/js-0.6.1
+# polymerize:
+#   path: ../polymerize
 dev_dependencies:
 #  polymerize: ^0.8.5
-#  polymerize:
-#    path: ../polymerize
 
 transformers:
  - polymerize:

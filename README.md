@@ -11,9 +11,7 @@ how to use `polymerize` to build polymer-2 apps using Dart..
 
 ## How to run the project
 
- 1. Start a minimal web server in the output folder : 
-  - `cd build/web`
-  - `python -m SimpleHTTPServer 8000`
- 2. Open a browser on `http://localhost:8000`
+ 1. do a `pub serve`
+ 2. Open a browser on `http://localhost:8080`
 
 

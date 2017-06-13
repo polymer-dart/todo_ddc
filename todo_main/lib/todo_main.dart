@@ -32,7 +32,7 @@ abstract class MyBehavior implements DartCallbacksBehavior {
   // TODO : THIS STILL NOT WORKING
   @Observe('myProp')
   void checkObserveOnBehavior(_) {
-    print("My Prop has changed in a behavior :${myProp}");
+    print("My Prop has changed in a behavior (changed) :${myProp}");
   }
 
   void readyPostHook() {
