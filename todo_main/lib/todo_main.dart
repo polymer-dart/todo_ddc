@@ -74,7 +74,7 @@ abstract class TodoMain extends PolymerElement implements MyReduxBehavior, Mutab
   @Property(statePath: 'todos')
   List<TodoDTO> todos = [];
 
-  List<TodoDTO> todos2;
+  List<TodoDTO> todos2= [];
 
   bool canAdd;
 
