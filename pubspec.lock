@@ -241,7 +241,11 @@ packages:
       name: polymerize
       url: "http://pub.drafintech.it:5001"
     source: hosted
+<<<<<<< HEAD
     version: "0.9.0"
+=======
+    version: "0.8.6+1"
+>>>>>>> 5d8b08f228fb90e279f057bcadc8f948805df0ef
   polymerize_common:
     description:
       name: polymerize_common
