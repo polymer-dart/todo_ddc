@@ -241,7 +241,7 @@ packages:
       name: polymerize
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.1"
+    version: "0.9.1+1"
   polymerize_common:
     description:
       name: polymerize_common

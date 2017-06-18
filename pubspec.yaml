@@ -6,7 +6,7 @@ dependencies:
  todo_main:
    path: todo_main
  polymer_element: "^2.0.2"
- polymerize: ^0.9.0+1
+ polymerize: ^0.9.1+1
 
 # polymer_elements:
 #  git:
