@@ -60,7 +60,7 @@ packages:
       name: code_builder
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.3"
+    version: "1.0.4"
   code_transformers:
     description:
       name: code_transformers
@@ -138,7 +138,7 @@ packages:
       name: html5
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.0+1"
+    version: "0.1.4"
   http:
     description:
       name: http
@@ -156,7 +156,7 @@ packages:
       name: intl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.15.0"
+    version: "0.15.1"
   isolate:
     description:
       name: isolate
@@ -228,20 +228,20 @@ packages:
       name: polymer_element
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.4"
   polymer_elements:
     description:
-      ref: "v0.4.0"
-      resolved-ref: "317cabbda036961ac8a860036b1c96ea7483a826"
+      ref: "v0.4.1"
+      resolved-ref: "15691c701974609e07fbaedf8b214253019cd162"
       url: "https://github.com/polymer-dart/polymerize_elements.git"
     source: git
-    version: "2.0.0-preview.1+1"
+    version: "2.0.1"
   polymerize:
     description:
       name: polymerize
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.0+1"
+    version: "0.9.1"
   polymerize_common:
     description:
       name: polymerize_common
@@ -339,4 +339,4 @@ packages:
     source: hosted
     version: "2.1.12"
 sdks:
-  dart: ">=1.23.0-dev.0.0 <2.0.0"
+  dart: ">=1.24.0 <2.0.0"
