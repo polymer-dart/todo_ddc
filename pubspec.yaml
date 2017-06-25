@@ -21,8 +21,8 @@ web:
   debug: dartdevc
 
 dependency_overrides:
-# polymer_element:
-#  path: ../polymer_element
+ polymer_element:
+  path: ../polymer_element
 # polymerize_common:
 #  path: ../polymerize_common
 # polymer_elements:
