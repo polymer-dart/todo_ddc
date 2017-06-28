@@ -256,9 +256,9 @@ packages:
     version: "2.0.1"
   polymerize:
     description:
-      name: polymerize
-      url: "http://pub.drafintech.it:5001"
-    source: hosted
+      path: "../polymerize"
+      relative: true
+    source: path
     version: "0.9.3"
   polymerize_common:
     description:
