@@ -20,6 +20,7 @@ web:
   release: dartdevc
   debug: dartdevc
 
+
 dependency_overrides:
 # polymer_element:
 #  path: ../polymer_element
@@ -39,8 +40,11 @@ dependency_overrides:
 # polymerize:
 #   path: ../polymerize
 dev_dependencies:
+ test: any
 #  polymerize: ^0.8.5
 
 transformers:
  - polymerize:
     entry-point: lib/index.dart
+ - test/pub_serve:
+    $include: test/**_test.dart
