@@ -144,7 +144,7 @@ packages:
       name: html5
       url: "http://pub.drafintech.it:5001"
     source: hosted
-    version: "0.1.4"
+    version: "0.1.5"
   http:
     description:
       name: http
