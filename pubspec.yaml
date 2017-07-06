@@ -49,4 +49,4 @@ transformers:
       - web/*.dart
       - test/*.dart
  - test/pub_serve:
-    $exclude: test/*.dart
+    $include: xtest/*.dart
