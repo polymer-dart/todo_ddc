@@ -21,7 +21,7 @@ void main() {
   });
 
   group('some more usefull tests',() {
-    test('creating and using polymerize component',()async {
+    test('creating and using polymerize component',() async {
       TodoMain main = document.createElement('todo-main');
       body.appendChild(main);
       await new Future(()=>0);

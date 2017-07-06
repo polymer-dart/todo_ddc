@@ -28,8 +28,8 @@ dependency_overrides:
 #  path: ../polymerize_common
 # polymer_elements:
 #  path: /home/vittorio/Develop/dart/polymer_elements
-# html5:
-#  path: ../html_lib
+ html5:
+  path: ../html_lib
  polymer_elements:
 #  path: ../polymer_elements
   git:
@@ -37,10 +37,10 @@ dependency_overrides:
     ref: v0.4.1
 # js:
 #  path: /home/vittorio/.pub-cache/hosted/pub.dartlang.org/js-0.6.1
-# polymerize:
-#   path: ../polymerize
+ polymerize:
+   path: ../polymerize
 dev_dependencies:
- test: any
+ test: 0.12.22
 #  polymerize: ^0.8.5
 
 transformers:

@@ -141,10 +141,10 @@ packages:
     version: "0.13.2"
   html5:
     description:
-      name: html5
-      url: "http://pub.drafintech.it:5001"
-    source: hosted
-    version: "0.1.6"
+      path: "../html_lib"
+      relative: true
+    source: path
+    version: "0.1.7-dev"
   http:
     description:
       name: http
@@ -256,10 +256,10 @@ packages:
     version: "2.0.1"
   polymerize:
     description:
-      name: polymerize
-      url: "http://pub.drafintech.it:5001"
-    source: hosted
-    version: "0.9.4"
+      path: "../polymerize"
+      relative: true
+    source: path
+    version: "0.9.5-dev"
   polymerize_common:
     description:
       name: polymerize_common
@@ -367,7 +367,7 @@ packages:
       name: test
       url: "http://pub.drafintech.it:5001"
     source: hosted
-    version: "0.12.23+1"
+    version: "0.12.22"
   todo_common:
     description:
       path: todo_common
