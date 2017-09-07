@@ -8,7 +8,7 @@ import 'package:polymer_elements/iron_flex_layout.dart';
 
 
 @init
-main() {
+remain() {
  print("hello here we are!!");
 }
 

@@ -7,6 +7,7 @@ dependencies:
    path: todo_main
  polymer_element: "^2.0.2"
  polymerize: ^0.9.4
+ html5: 0.1.7
 
 # polymer_elements:
 #  git:
@@ -28,8 +29,8 @@ dependency_overrides:
 #  path: ../polymerize_common
 # polymer_elements:
 #  path: /home/vittorio/Develop/dart/polymer_elements
- html5:
-  path: ../html_lib
+# html5:
+#  path: ../html_lib
  polymer_elements:
 #  path: ../polymer_elements
   git:
