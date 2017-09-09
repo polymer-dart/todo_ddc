@@ -37,6 +37,30 @@ packages:
       url: "http://pub.drafintech.it:5001"
     source: hosted
     version: "0.1.4"
+  boolean_selector:
+    description:
+      name: boolean_selector
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "1.0.2"
+  build:
+    description:
+      name: build
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "0.10.0+1"
+  build_barback:
+    description:
+      name: build_barback
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "0.4.0"
+  build_runner:
+    description:
+      name: build_runner
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "0.4.0+3"
   built_collection:
     description:
       name: built_collection
@@ -138,13 +162,19 @@ packages:
       path: "../../html_lib"
       relative: true
     source: path
-    version: "0.0.7"
+    version: "0.1.8-dev"
   http:
     description:
       name: http
       url: "http://pub.drafintech.it:5001"
     source: hosted
     version: "0.11.3+13"
+  http_multi_server:
+    description:
+      name: http_multi_server
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "2.0.3"
   http_parser:
     description:
       name: http_parser
@@ -198,7 +228,19 @@ packages:
       name: meta
       url: "http://pub.drafintech.it:5001"
     source: hosted
-    version: "1.0.5"
+    version: "1.1.1"
+  mime:
+    description:
+      name: mime
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "0.9.3"
+  node_preamble:
+    description:
+      name: node_preamble
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "1.4.0"
   package_config:
     description:
       name: package_config
@@ -228,26 +270,25 @@ packages:
       path: "../../polymer_element"
       relative: true
     source: path
-    version: "2.0.0+rc.13"
+    version: "2.0.7-dev"
   polymer_elements:
     description:
-      ref: "v0.3.4"
-      resolved-ref: b7305d2889adb93755626df07a02ebc98e36966b
-      url: "https://github.com/polymer-dart/polymerize_elements.git"
-    source: git
-    version: "2.0.0-preview.1+1"
+      path: "../../polymer_elements"
+      relative: true
+    source: path
+    version: "2.0.1"
   polymerize:
     description:
       path: "../../polymerize"
       relative: true
     source: path
-    version: "0.8.5"
+    version: "0.9.6-dev"
   polymerize_common:
     description:
       path: "../../polymerize_common"
       relative: true
     source: path
-    version: "1.0.0"
+    version: "1.0.2"
   pool:
     description:
       name: pool
@@ -260,6 +301,12 @@ packages:
       url: "http://pub.drafintech.it:5001"
     source: hosted
     version: "0.5.4"
+  pub_semver:
+    description:
+      name: pub_semver
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "1.3.2"
   quiver:
     description:
       name: quiver
@@ -272,6 +319,42 @@ packages:
       url: "http://pub.drafintech.it:5001"
     source: hosted
     version: "2.1.2"
+  shelf:
+    description:
+      name: shelf
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "0.6.8"
+  shelf_packages_handler:
+    description:
+      name: shelf_packages_handler
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "1.0.2"
+  shelf_static:
+    description:
+      name: shelf_static
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "0.2.5"
+  shelf_web_socket:
+    description:
+      name: shelf_web_socket
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "0.2.1"
+  source_gen:
+    description:
+      name: source_gen
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "0.7.1"
+  source_map_stack_trace:
+    description:
+      name: source_map_stack_trace
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "1.1.4"
   source_maps:
     description:
       name: source_maps
@@ -290,12 +373,36 @@ packages:
       url: "http://pub.drafintech.it:5001"
     source: hosted
     version: "1.7.3"
+  stream_channel:
+    description:
+      name: stream_channel
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "1.6.1"
+  stream_transform:
+    description:
+      name: stream_transform
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "0.0.9"
   string_scanner:
     description:
       name: string_scanner
       url: "http://pub.drafintech.it:5001"
     source: hosted
     version: "1.0.2"
+  term_glyph:
+    description:
+      name: term_glyph
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "1.0.0"
+  test:
+    description:
+      name: test
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "0.12.24+2"
   todo_common:
     description:
       path: "../todo_common"
@@ -326,6 +433,12 @@ packages:
       url: "http://pub.drafintech.it:5001"
     source: hosted
     version: "0.9.7+3"
+  web_socket_channel:
+    description:
+      name: web_socket_channel
+      url: "http://pub.drafintech.it:5001"
+    source: hosted
+    version: "1.0.5"
   yaml:
     description:
       name: yaml
@@ -333,4 +446,4 @@ packages:
     source: hosted
     version: "2.1.12"
 sdks:
-  dart: ">=1.23.0-dev.0.0 <2.0.0"
+  dart: ">=1.23.0 <2.0.0-dev.infinity"

@@ -6,6 +6,7 @@ import 'package:polymer_elements/platinum_sw_register.dart';
 import 'package:polymer_elements/platinum_sw_cache.dart';
 import 'package:polymer_elements/iron_flex_layout.dart';
 
+part 'index.polymerize.dart';
 
 @init
 remain() {

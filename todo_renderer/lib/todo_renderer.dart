@@ -15,6 +15,8 @@ import 'package:polymer_element/redux_local.dart';
 
 import 'dart:async';
 
+part 'todo_renderer.polymerize.dart';
+
 class RendererState {
   final TodoDTO todo;
   final bool editing;

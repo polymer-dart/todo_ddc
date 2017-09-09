@@ -24,6 +24,7 @@ import 'package:polymer_elements/app_scroll_effects.dart';
 import 'package:polymer_element/observe.dart';
 import 'todo_list.dart';
 
+part 'todo_main.polymerize.dart';
 
 @PolymerBehavior("Sample.MyBehavior")
 abstract class MyBehavior implements DartCallbacksBehavior {

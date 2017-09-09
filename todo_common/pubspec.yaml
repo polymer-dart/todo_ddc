@@ -28,4 +28,5 @@ dev_dependencies:
     path: ../../polymerize
 
 transformers:
- - polymerize
+ - polymerize:
+    skip-generate: true

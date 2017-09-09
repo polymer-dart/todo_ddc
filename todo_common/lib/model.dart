@@ -6,6 +6,8 @@ import 'package:polymer_element/redux_local.dart';
 import 'package:polymer_element/dart_callbacks_behavior.dart';
 import 'package:built_collection/built_collection.dart';
 
+part 'model.polymerize.dart';
+
 int _id = 0;
 
 class TodoDTO {

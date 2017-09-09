@@ -6,6 +6,8 @@ import 'package:todo_renderer/todo_renderer.dart';
 import 'package:polymer_elements/paper_input.dart';
 import 'package:polymer_elements/paper_button.dart';
 
+part 'todo_list.polymerize.dart';
+
 class MyObservedObject {
   String myNestedProperty;
   // Recursive declarations are handled nicely (unless there's a recursive graph, that's impossible to notify correctly)

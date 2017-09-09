@@ -16,14 +16,14 @@ dependency_overrides:
   path: ../../polymer_element
  polymerize_common:
   path: ../../polymerize_common
-# polymer_elements:
-#  path: /home/vittorio/Develop/dart/polymer_elements
+ polymer_elements:
+  path: ../../polymer_elements
  html5:
   path: ../../html_lib
- polymer_elements:
-  git:
-    url: https://github.com/polymer-dart/polymerize_elements.git
-    ref: v0.3.4
+# polymer_elements:
+#  git:
+#    url: https://github.com/polymer-dart/polymerize_elements.git
+#    ref: v0.3.4
 # js:
 #  path: /home/vittorio/.pub-cache/hosted/pub.dartlang.org/js-0.6.1
 dev_dependencies:
@@ -32,4 +32,5 @@ dev_dependencies:
     path: ../../polymerize
 
 transformers:
- - polymerize
+ - polymerize:
+    skip-generate: true
