@@ -41,7 +41,7 @@ dependency_overrides:
  polymerize:
    path: ../../polymerize
 dev_dependencies:
-# test: 0.12.22
+ test: 0.12.22
 #  polymerize: ^0.8.5
 
 transformers:
@@ -50,5 +50,5 @@ transformers:
     entry-points: 
       - web/*.dart
       - test/*.dart
-# - test/pub_serve:
-#    $exclude: test/*.dart
+ - test/pub_serve:
+    $include: _none_/*.dart
